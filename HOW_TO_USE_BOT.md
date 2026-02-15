@@ -53,7 +53,7 @@ The bot uses the **job-shortlist skill** for the pipeline and your **USER.md + r
 
 Your resume is used so the bot can give job-search and pitch advice that matches your background.
 
-- **Path on your PC:** `C:\Users\kirav\OneDrive\Desktop\09.12.2025 resume\04.01.2026_EN_Resume_Elena Revicheva_compressed.pdf`
+- **Path on your PC:** e.g. `C:\Users\YourName\OneDrive\Desktop\resume\Your_Resume.pdf` (put your own path in the bot's workspace docs)
 - A **resume summary** is also in the OpenClaw workspace so the agent always has your profile in context (exec + applied AI, Panama, LATAM remote, target roles).
 
 If you update the PDF, replace the file at that path or put a copy in the workspace `resume/` folder so the bot can use the latest version.

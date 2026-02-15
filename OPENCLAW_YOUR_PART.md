@@ -18,7 +18,7 @@ $env:ANTHROPIC_API_KEY = "sk-ant-your-key-here"
 ```
 
 **Or permanently:**  
-- Create or edit `C:\Users\kirav\.openclaw\.env`  
+- Create or edit `C:\Users\YourName\.openclaw\.env`  
 - Add one line: `ANTHROPIC_API_KEY=sk-ant-your-key-here`  
 - (Don’t commit this file.)
 
@@ -35,7 +35,7 @@ $env:ANTHROPIC_API_KEY = "sk-ant-your-key-here"
 3. Follow the prompts (name and username for the bot).
 4. Copy the **token** BotFather gives you (looks like `123456789:ABCdefGHI...`).
 5. Open the config and replace the placeholder:
-   - File: `C:\Users\kirav\.openclaw\openclaw.json`
+   - File: `C:\Users\YourName\.openclaw\openclaw.json`
    - Find: `"botToken": "REPLACE_WITH_YOUR_BOT_TOKEN"`
    - Replace with: `"botToken": "YOUR_ACTUAL_TOKEN"`
 6. Save the file. OpenClaw will reload the config.
@@ -49,7 +49,7 @@ $env:ANTHROPIC_API_KEY = "sk-ant-your-key-here"
 ## 3. WhatsApp agent (your existing number)
 
 1. **Put your real number in the config**
-   - File: `C:\Users\kirav\.openclaw\openclaw.json`
+   - File: `C:\Users\YourName\.openclaw\openclaw.json`
    - Find: `"allowFrom": ["+507XXXXXXXX"]`
    - Replace with your Panama number, e.g.: `"allowFrom": ["+50761234567"]`  
    - Use international format: `+507` + your number (no leading 0).
@@ -91,7 +91,7 @@ You should get back your YC AI Assistant shortlist from the job-list-filter pipe
 
 | Step | What to do |
 |------|------------|
-| 1 | Set `ANTHROPIC_API_KEY` (or OpenAI) in env or `C:\Users\kirav\.openclaw\.env` |
+| 1 | Set `ANTHROPIC_API_KEY` (or OpenAI) in env or `C:\Users\YourName\.openclaw\.env` |
 | 2 | Create bot in @BotFather, put token in `openclaw.json` → `channels.telegram.botToken` |
 | 3 | Put your Panama number in `openclaw.json` → `channels.whatsapp.allowFrom` |
 | 4 | Run `openclaw channels login` and scan QR for WhatsApp |

@@ -25,4 +25,4 @@ HOW THE ANALYSIS WORKS
     - avoid = we hide these so you don't waste time.
   So the result is fewer companies, with real apply links when you paste the links.
 
-Folder: D:\aideazz\ai-cofounders\job-list-filter
+Folder: (this repo — e.g. D:\path\to\openclaw-vibejob-shortlist)

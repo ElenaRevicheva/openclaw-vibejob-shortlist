@@ -3,8 +3,8 @@
 When the user asks for their **job shortlist**, **YC companies**, **refresh job list**, or **companies to apply to**:
 
 1. **Run the pipeline** in the job-list-filter folder:
-   - Path (WSL2): `cd /mnt/d/aideazz/ai-cofounders/job-list-filter`
-   - Path (Windows): `cd /d D:\aideazz\ai-cofounders\job-list-filter`
+   - Path (WSL2): `cd /path/to/openclaw-vibejob-shortlist` (or e.g. /mnt/d/.../job-list-filter)
+   - Path (Windows): `cd /d C:\path\to\openclaw-vibejob-shortlist`
    - Then run **one** of:
      - WSL2/Linux/Mac: `./run_shortlist.sh`
      - Windows: `run_shortlist.bat`

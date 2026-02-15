@@ -36,7 +36,7 @@ openclaw onboard --install-daemon
 
 The wizard will ask for model (e.g. Anthropic/OpenAI), workspace path, and optionally Telegram/other channels. Complete it so the Gateway runs and you can talk to the agent (WebChat or Telegram).
 
-On **Windows without WSL2**: You can try `npm install -g openclaw@latest` in PowerShell, but OpenClaw’s recommended path is [Windows via WSL2](https://github.com/openclaw/openclaw). If you run on Windows only, use the path `D:\aideazz\ai-cofounders\job-list-filter` in the skill and run scripts via `run_shortlist.bat` (see Step 3).
+On **Windows without WSL2**: You can try `npm install -g openclaw@latest` in PowerShell, but OpenClaw’s recommended path is [Windows via WSL2](https://github.com/openclaw/openclaw). If you run on Windows only, use the path to this repo on your machine (e.g. `D:\path\to\openclaw-vibejob-shortlist`) in the skill and run scripts via `run_shortlist.bat` (see Step 3).
 
 ---
 
@@ -48,13 +48,13 @@ OpenClaw’s agent runs **bash** (or process) on the machine where the **Gateway
 Your folder on Windows is visible in WSL2 at:
 
 ```text
-/mnt/d/aideazz/ai-cofounders/job-list-filter
+/path/to/openclaw-vibejob-shortlist
 ```
 
 No copy needed. In WSL2 install Python and deps once:
 
 ```bash
-cd /mnt/d/aideazz/ai-cofounders/job-list-filter
+cd /path/to/openclaw-vibejob-shortlist
 pip3 install -r requirements.txt
 chmod +x run_shortlist.sh
 ```
@@ -63,7 +63,7 @@ chmod +x run_shortlist.sh
 Use the folder as-is:
 
 ```text
-D:\aideazz\ai-cofounders\job-list-filter
+D:\path\to\openclaw-vibejob-shortlist
 ```
 
 Ensure `python` is in PATH and `pip install -r requirements.txt` is done there.
@@ -84,13 +84,13 @@ You need a folder `job-shortlist` with a file `SKILL.md` inside it.
 
 ```bash
 mkdir -p ~/.openclaw/workspace/skills
-cp -r /mnt/d/aideazz/ai-cofounders/job-list-filter/openclaw-skill/job-shortlist ~/.openclaw/workspace/skills/
+cp -r /path/to/openclaw-vibejob-shortlist/openclaw-skill/job-shortlist ~/.openclaw/workspace/skills/
 ```
 
 **From Windows (PowerShell):**  
 Copy the folder manually:
 
-- Source: `D:\aideazz\ai-cofounders\job-list-filter\openclaw-skill\job-shortlist`
+- Source: `D:\path\to\openclaw-vibejob-shortlist\openclaw-skill\job-shortlist`
 - Target: `%USERPROFILE%\.openclaw\workspace\skills\job-shortlist`
 
 (If `\.openclaw\workspace\skills` doesn’t exist, create it. You need `skills\job-shortlist\SKILL.md`.)
@@ -109,9 +109,9 @@ Open in an editor:
 Set the path once at the top (pick one):
 
 - **WSL2:**  
-  `JOBLIST_PATH=/mnt/d/aideazz/ai-cofounders/job-list-filter`
+  `JOBLIST_PATH=/path/to/openclaw-vibejob-shortlist`
 - **Windows:**  
-  `JOBLIST_PATH=D:\aideazz\ai-cofounders\job-list-filter`
+  `JOBLIST_PATH=D:\path\to\openclaw-vibejob-shortlist`
 
 Then in the skill text, tell the agent to:
 
@@ -134,8 +134,8 @@ Replace the contents of `~/.openclaw/workspace/skills/job-shortlist/SKILL.md` (o
 When the user asks for their **job shortlist**, **YC companies**, **refresh job list**, or **companies to apply to**:
 
 1. **Run the pipeline** in the job-list-filter folder:
-   - Path (WSL2): `/mnt/d/aideazz/ai-cofounders/job-list-filter`
-   - Path (Windows): `D:\aideazz\ai-cofounders\job-list-filter`
+   - Path (WSL2): `/path/to/openclaw-vibejob-shortlist`
+   - Path (Windows): `D:\path\to\openclaw-vibejob-shortlist`
    - Commands to run (from that directory):
      - WSL2/Linux/Mac: `./run_shortlist.sh`
      - Windows: `run_shortlist.bat`
