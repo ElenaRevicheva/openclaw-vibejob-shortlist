@@ -1,0 +1,8 @@
+# Elena's profile - used to keep only realistic matches (from resume + PROFILE.md)
+# Edit this if your skills, location scope, or target roles change.
+
+LOCATION=Panama (UTC-5), US time alignment. LATAM remote / worldwide remote. Open to travel.
+TARGET_ROLES=AI Product Engineer, Applied LLM Engineer, AI Engineer, Founding Engineer, AI Solutions Architect
+SKILLS=Python, TypeScript, JavaScript, SQL, Cursor, Claude, GPT, Groq, LLM, FastAPI, Node, Express, React, REST APIs, PostgreSQL, Oracle, Railway, Telegram, WhatsApp, AI agents, prompt engineering
+GOOD_FIT_KEYWORDS=AI, LLM, agent, product engineer, dev tools, SaaS, API, automation, fintech, crypto, Web3, startup, founding engineer, remote, LATAM, Latin America
+AVOID_KEYWORDS=embedded, hardware only, biotech lab, senior staff principal, Java backend only, C++ only, on-site only non-remote

@@ -1,0 +1,26 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.so
+.Python
+.env
+.env.local
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Generated / runtime data
+yc_ai_assistant_companies.json
+filtered_jobs.csv
+result.txt
+paste_here.txt
+companies.csv
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

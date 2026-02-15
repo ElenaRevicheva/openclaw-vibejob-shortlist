@@ -1,0 +1,28 @@
+HOW TO USE
+==========
+
+► YC AI Assistant list (renewable top 50 companies)
+   See: YC_PIPELINE_HOW_TO_USE.md
+   Run: python yc_ai_assistant_ingest.py  →  result in yc_ai_assistant_companies.json
+
+► Ben Lang list (paste & filter) (the list of companies) under the first line in paste_here.txt. Save.
+
+2. Optional: Scroll down in paste_here.txt to "--- LINKS ---" and paste Ben Lang's COMMENT that has the career page links (the lines like "1) CHAMP - https://..."). Save. Then your result will show APPLY: <clickable link> for each company.
+
+3. Double-click RUN_FILTER.bat.
+
+4. Open result.txt. You get:
+   - A short list (only remote/Panama + realistic for you).
+   - For each company: APPLY link (if you pasted the links) or a note to search.
+   - A short "How the analysis works" at the top.
+
+HOW THE ANALYSIS WORKS
+======================
+  - Step 1 (location): We keep only companies whose locations include "remote" or "Panama". The rest are dropped (you're in Panama / want remote).
+  - Step 2 (fit): We use your profile in elena_profile.txt (your skills and target roles from your resume). Each company is scored:
+    - GOOD FIT = what they do matches your targets (AI, LLM, dev tools, API, etc.).
+    - maybe = could be relevant.
+    - avoid = we hide these so you don't waste time.
+  So the result is fewer companies, with real apply links when you paste the links.
+
+Folder: D:\aideazz\ai-cofounders\job-list-filter
