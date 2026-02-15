@@ -1,6 +1,6 @@
 # OpenClaw + Job Search: How I Use OpenClaw to Complement My Autonomous Job Engine
 
-**For [Peter Steinberger](https://github.com/petersteinberger) and the OpenClaw community** — here’s what I built with OpenClaw and how it fits into my job search.
+**For the OpenClaw community** — here’s what I built with OpenClaw and how it fits into my job search.
 
 **Elena Revicheva** · [LinkedIn](https://linkedin.com/in/elenarevicheva) · [AIdeazz](https://aideazz.xyz) · Panama, remote worldwide
 
