@@ -21,12 +21,14 @@ Source: https://github.com/yc-oss/api (tags/ai-assistant.json)
 import argparse
 import json
 from pathlib import Path
+from datetime import datetime, timezone
 
 import requests
 
 # YC OSS API: by tag (AI Assistant) – 162 companies, updated daily
 YC_TAG_AI_ASSISTANT = "https://yc-oss.github.io/api/tags/ai-assistant.json"
 OUTPUT_FILE = Path(__file__).parent / "yc_ai_assistant_companies.json"
+META_FILE = Path(__file__).parent / "yc_ai_assistant_meta.json"
 # VibeJobHunter sync: list of {company_name, source} for /priority sync yc
 PRIORITY_EXPORT_FILE = Path(__file__).parent / "priority_companies_for_vibejob.json"
 
@@ -153,7 +155,9 @@ def main():
     args = ap.parse_args()
 
     print("Fetching YC AI Assistant companies...")
+    fetch_time = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
     companies = fetch_yc_ai_assistant_companies()
+    print(f"DATA_FETCHED_AT: {fetch_time}")
     print(f"  Fetched {len(companies)} companies with tag AI Assistant.")
 
     # Filter: Active only (unless disabled)
@@ -178,6 +182,8 @@ def main():
     out = [extract_company_record(c, s) for c, s in top]
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(out, f, indent=2)
+    with open(META_FILE, "w", encoding="utf-8") as f:
+        json.dump({"fetched_at": fetch_time}, f)
 
     print(f"Saved top {len(out)} companies to {OUTPUT_FILE}")
     print("Sample scores:", [s for _, s in top[:5]])

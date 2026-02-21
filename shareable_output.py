@@ -18,6 +18,7 @@ from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).parent
 JSON_FILE = SCRIPT_DIR / "yc_ai_assistant_companies.json"
+META_FILE = SCRIPT_DIR / "yc_ai_assistant_meta.json"
 
 
 def main():
@@ -33,9 +34,20 @@ def main():
     with open(JSON_FILE, encoding="utf-8") as f:
         companies = json.load(f)
 
+    fetched_at = ""
+    if META_FILE.exists():
+        try:
+            with open(META_FILE, encoding="utf-8") as f:
+                meta = json.load(f)
+                fetched_at = meta.get("fetched_at", "")
+        except Exception:
+            pass
+
     top = companies[: args.top]
 
     if not args.linkedin_only:
+        if fetched_at:
+            print(f"Data fetched at: {fetched_at}")
         print("YOUR SHORTLIST (from YC AI Assistant, LATAM remote / worldwide)")
         print("=" * 50)
         for i, c in enumerate(top, 1):

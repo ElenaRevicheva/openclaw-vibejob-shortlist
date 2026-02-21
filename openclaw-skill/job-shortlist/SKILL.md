@@ -21,6 +21,16 @@ When the user asks for **/menu** or "what can you do", describe these 4 options:
 
 ---
 
+## MANDATORY: Job shortlist — ALWAYS execute, never from memory
+
+**When the user says "job shortlist", "/shortlist", "YC companies", "refresh job list", or "companies to apply to":**
+- You MUST execute the shell command. NEVER reply from memory, context, or previous outputs.
+- Run: `cd /home/ubuntu/job-list-filter && ./run_shortlist.sh`
+- Paste the ACTUAL terminal output. The output will include "Data fetched at: YYYY-MM-DD HH:MM:SS UTC" — if your reply does NOT have that line, you did not run the command. Run it now.
+- The list changes. Do not reuse old data.
+
+---
+
 When the user asks for their **job shortlist**, **YC companies**, **refresh job list**, **/shortlist**, or **companies to apply to**:
 
 1. **ALWAYS run the pipeline fresh.** Never use cached or previously fetched output. Each request = new fetch from YC API.
