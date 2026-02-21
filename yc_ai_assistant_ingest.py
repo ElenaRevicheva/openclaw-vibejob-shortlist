@@ -27,6 +27,8 @@ import requests
 # YC OSS API: by tag (AI Assistant) – 162 companies, updated daily
 YC_TAG_AI_ASSISTANT = "https://yc-oss.github.io/api/tags/ai-assistant.json"
 OUTPUT_FILE = Path(__file__).parent / "yc_ai_assistant_companies.json"
+# VibeJobHunter sync: list of {company_name, source} for /priority sync yc
+PRIORITY_EXPORT_FILE = Path(__file__).parent / "priority_companies_for_vibejob.json"
 
 # ─── Scoring (strategic top 50) ───
 SCORE_REMOTE = 3
@@ -110,6 +112,17 @@ def score_company(company):
     return score
 
 
+def slugify_company(name):
+    """Normalize company name for VibeJobHunter matching (lowercase, alphanumeric + hyphen)."""
+    if not name:
+        return ""
+    import re
+    s = str(name).lower().strip()
+    s = re.sub(r"[^a-z0-9\-\s]", " ", s)
+    s = re.sub(r"\s+", "-", s).strip("-")
+    return s or name.lower()
+
+
 def extract_company_record(company, score=0):
     """Minimal record for JSON output and downstream (e.g. VibeJobHunter source)."""
     return {
@@ -132,6 +145,7 @@ def main():
     ap.add_argument("--top", type=int, default=50, help="Number of top-scored companies to output (default 50)")
     ap.add_argument("--remote-only", action="store_true", help="Keep only remote-friendly or international companies")
     ap.add_argument("--no-filter-status", action="store_true", help="Do not filter to status=Active only")
+    ap.add_argument("--export-priority", action="store_true", help="Also write priority_companies_for_vibejob.json for VibeJobHunter sync")
     args = ap.parse_args()
 
     print("Fetching YC AI Assistant companies...")
@@ -163,6 +177,17 @@ def main():
 
     print(f"Saved top {len(out)} companies to {OUTPUT_FILE}")
     print("Sample scores:", [s for _, s in top[:5]])
+
+    # Optional: export for VibeJobHunter /priority sync yc (additive — Feb 2026)
+    if args.export_priority:
+        priority_out = [
+            {"company_name": slugify_company(c.get("name")), "source": "yc"}
+            for c, _ in top
+            if slugify_company(c.get("name"))
+        ]
+        with open(PRIORITY_EXPORT_FILE, "w", encoding="utf-8") as f:
+            json.dump(priority_out, f, indent=2)
+        print(f"Exported {len(priority_out)} to {PRIORITY_EXPORT_FILE} (for VibeJobHunter /priority sync yc)")
 
 
 if __name__ == "__main__":

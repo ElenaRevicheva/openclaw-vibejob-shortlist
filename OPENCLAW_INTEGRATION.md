@@ -139,7 +139,7 @@ When the user asks for their **job shortlist**, **YC companies**, **refresh job 
    - Commands to run (from that directory):
      - WSL2/Linux/Mac: `./run_shortlist.sh`
      - Windows: `run_shortlist.bat`
-   - Or run manually: `python yc_ai_assistant_ingest.py --remote-only --top 20` then `python shareable_output.py --top 10`.
+   - Or run manually: `python yc_ai_assistant_ingest.py --remote-only --top 20 --export-priority` then `python shareable_output.py --top 10`.
 
 2. **Return to the user**:
    - Summarize: "Here are your top 10 YC AI Assistant companies (remote-friendly, scored)."
