@@ -21,9 +21,10 @@ When the user asks for **/menu** or "what can you do", describe these 4 options:
 
 ---
 
-When the user asks for their **job shortlist**, **YC companies**, **refresh job list**, or **companies to apply to**:
+When the user asks for their **job shortlist**, **YC companies**, **refresh job list**, **/shortlist**, or **companies to apply to**:
 
-1. **Run the pipeline** in the job-list-filter folder. **You MUST use --export-priority** so VibeJob Hunter can sync.
+1. **ALWAYS run the pipeline fresh.** Never use cached or previously fetched output. Each request = new fetch from YC API.
+2. **Run the pipeline** in the job-list-filter folder (--export-priority is included in run_shortlist.sh):
    - **Oracle (deployed server):** Run exactly: `cd /home/ubuntu/job-list-filter && ./run_shortlist.sh`
    - Path (WSL2): `cd /path/to/openclaw-vibejob-shortlist` then `./run_shortlist.sh`
    - Path (Windows): `cd /d C:\path\to\openclaw-vibejob-shortlist` then `run_shortlist.bat`
