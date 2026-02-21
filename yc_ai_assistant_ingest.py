@@ -48,8 +48,12 @@ DEVELOPER_TOOL_TAGS = {"developer tools", "api", "open source"}
 
 
 def fetch_yc_ai_assistant_companies():
-    """Pull YC company list for tag AI Assistant. Returns list of company dicts."""
-    resp = requests.get(YC_TAG_AI_ASSISTANT, timeout=30)
+    """Pull YC company list for tag AI Assistant. Returns list of company dicts.
+    Uses cache-busting to ensure fresh data (no CDN/proxy stale cache)."""
+    import time
+    url = f"{YC_TAG_AI_ASSISTANT}?t={int(time.time())}"
+    headers = {"Cache-Control": "no-cache", "Pragma": "no-cache"}
+    resp = requests.get(url, headers=headers, timeout=30)
     resp.raise_for_status()
     return resp.json()
 
