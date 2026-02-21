@@ -1,5 +1,17 @@
 # Job Shortlist skill – OpenClaw
 
+## MANDATORY: /priority, priority list, priority companies
+
+**When the user says "/priority", "/priority list", "priority list", or "priority companies":**
+- You do NOT have access to the priority list. It lives ONLY in VibeJob Hunter.
+- Do NOT invent, fabricate, or make up a list of companies.
+- Do NOT run shell commands (ls, grep, find, etc.) to look for priority files.
+- Reply ONLY with this exact message (or very close):
+
+"The Priority Companies list is managed in **VibeJob Hunter** (@vibejob_hunter_bot). Use /priority list there to see your target companies. To sync: (1) Ask me for your job shortlist here, (2) In VibeJob Hunter use /priority sync yc."
+
+---
+
 When the user asks for **/menu** or "what can you do", describe these 4 options:
 
 1. **Job shortlist** — Top 10 YC AI companies (LATAM/remote). Say "job shortlist" or tap Shortlist.
@@ -28,7 +40,6 @@ When the user asks for their **job shortlist**, **YC companies**, **refresh job 
 3. **If the user says "LinkedIn post" or "shareable"**: Format the top 5 companies as name – one-liner, link. Add: "Building in public: how I keep my target list sharp. #AI #YC #RemoteJobs"
 
 4. **If the user asks for "priority list", "priority companies", or "/priority"**:
-   - **CRITICAL: Do NOT offer to create, build, or set up a priority list.** The priority list already exists in VibeJob Hunter.
-   - Reply ONLY with: "The Priority Companies list is managed in **VibeJob Hunter** (@vibejob_hunter_bot). Use `/priority list` there to see your target companies. To sync companies from this shortlist: (1) Ask me for your job shortlist here — I'll run the pipeline with export, (2) In VibeJob Hunter, use `/priority sync yc`."
+   - Follow the MANDATORY section at the top. Do NOT invent a list. Do NOT run commands. Redirect to VibeJob Hunter only.
 
 Do not make up companies. Only use output from the scripts. If the JSON is missing or commands fail, tell the user to run the pipeline once manually (see OPENCLAW_INTEGRATION.md in job-list-filter).
