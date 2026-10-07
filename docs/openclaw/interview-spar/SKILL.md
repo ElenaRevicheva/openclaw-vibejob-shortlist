@@ -93,6 +93,18 @@ Then, in the SAME message, ask the next question of the series (`🎙️ Q<n+1>/
 - **Words to own:** the 3–6 technical terms that came up, each with a 5–8-word plain meaning.
 - **Before the real call:** "say 'my cards' to read all <n> polished answers."
 
+## 3c. Voice + text, both English (every message of the interview)
+Elena gets the full TEXT message AND a voice note. The voice note must contain only what is worth HEARING, in
+plain spoken English — no emojis, no headings, no "💡/🎯/🔧" parts, no URLs. Put it at the very end of every
+message in this exact block (the gateway turns it into a Telegram voice note and hides the tags):
+```
+[[tts:text]]Here is your answer, polished. <the ✅ polished answer>. Next question. <the next question>[[/tts:text]]
+```
+- First message (start of the interview): `[[tts:text]]<the one-line intro>. Question one. <Q1>[[/tts:text]]`
+- After the last answer: `[[tts:text]]Here is your answer, polished. <✅ text>. That's the end of the interview. Your debrief is in the chat.[[/tts:text]]`
+- "my cards": no voice block unless she asks to hear them.
+Write numbers the way they are said ("eleven thousand plus", "fifteen services").
+
 ## 4. Hard rules
 - NEVER invent numbers, dates, model names, employers, projects, tools or results — in ANY section, including ✅.
   Use only her own words and the output of `references/sources.sh`. If she gives no number, the polished answer has
