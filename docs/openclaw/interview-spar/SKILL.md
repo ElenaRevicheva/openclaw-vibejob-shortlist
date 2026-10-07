@@ -14,7 +14,7 @@ She answers in ENGLISH, in her own words, with mistakes. Your job: give it back 
 Triggers: "spar", "/spar", "interview practice", "prep me for …", "ask me a question".
 - If she names a role or company, use it. For a company in her apply queue, get context with
   `grep -i -A40 "<company>" /home/ubuntu/apply-queue.html | head -80` (posting title, letter, company brief).
-- If she names nothing, pick one of her target roles from `references/outlook-facts.md` ("Target roles") and say which.
+- If she names nothing, pick one of her target roles from `references/outlook.txt` (section "The roles I'm built for") and say which.
 
 ## 2. Run a FULL mock interview — a series, in real interview order
 Default: **8 questions** (~25 min). "quick" = 4 (Q1, two core, Q7). "full" or "deep" = 10 (add two more core).
@@ -53,12 +53,18 @@ Put the concept's name at the END ("— that's called graceful degradation"), ne
 1–2 lines: what the interviewer is really checking for this role.
 
 ➕ **Proof you can add** (only if one fits)
-MANDATORY before writing this section: run
-`cat /home/ubuntu/.openclaw/workspace/skills/interview-spar/references/proof-bank.md /home/ubuntu/.openclaw/workspace/skills/interview-spar/references/outlook-facts.md`
-and COPY one sentence from that output, word for word, naming its section (e.g. `proof-bank · evals`).
-If you did not run that command in this turn, or nothing there fits, OMIT this section entirely.
-Never quote from memory. A proof that is not in those two files is a fabrication — on 7 Oct 2026 a test session
+MANDATORY before writing this section: run `bash /home/ubuntu/.openclaw/workspace/skills/interview-spar/references/sources.sh`
+and COPY one sentence from its output, word for word, naming where it came from (`outlook`, `defense-bank · <id>`
+or `wiki · <slug>`). If you did not run that command in this turn, or nothing there fits, OMIT this section.
+Never quote from memory. A proof that is not in that output is a fabrication — on 7 Oct 2026 a test session
 invented "Groq retired llama-3.1-70b in September 2024 … within 6 hours"; none of that is true.
+
+The three sources are her OWN products' verified records, read live, never copied by hand:
+- `outlook` — her Professional Outlook, a mechanical text extract of the file the PDF is built from.
+- `defense-bank` — verified interview answers the apply kit already uses (`cto-aipa/docs/interview/defense-bank.json`).
+- `wiki` — her published AI Ops Wiki incidents (`~/aideazz/content/ai-ops-wiki/incidents/`): symptom → root cause →
+  fix → verified → rule, with the concept name. **The failure / behavioural question (Q6) and its polished answer
+  should be built on one of these real incidents** — they are her best stories, already in Found → Did shape.
 
 🔧 **Fixed** (only if needed)
 Up to 3 short notes on what changed, e.g. "you said X — interviewers say Y". Kind, never condescending.
@@ -76,7 +82,8 @@ Then, in the SAME message, ask the next question of the series (`🎙️ Q<n+1>/
 
 ## 4. Hard rules
 - NEVER invent numbers, dates, model names, employers, projects, tools or results — in ANY section, including ✅.
-  Use only her own words and the two reference files. If she gives no number, the polished answer has no number.
+  Use only her own words and the output of `references/sources.sh`. If she gives no number, the polished answer has
+  no number.
 - If she says something technically wrong, correct it plainly in 🔧 and use the correct version in ✅.
 - Her operating model is the honest answer to deep implementation questions: "Agents implement under my direction;
   I own requirements, architecture, evaluation, deployment and production decisions." Never pretend she hand-coded it.

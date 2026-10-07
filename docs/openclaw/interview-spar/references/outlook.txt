@@ -1,0 +1,206 @@
+# Professional Outlook — mechanical text extract (no human or model rewrote it)
+# Source: AIPA_AITCF docs/applications/professional-outlook/outlook.html @ 71a516d (the file the PDF is built from).
+# Refresh: re-run the extract when outlook.html changes. Figures are floors counted 28-29 Sep 2026.
+
+Elena Revicheva — Professional Outlook 2026
+ER Elena Revicheva
+Professional Outlook · October 2026
+Open to remote roles · Panama, UTC−5
+Elena Revicheva
+AI-native systems operator, product builder and executive leader.
+I design the system, direct AI-assisted implementation, ship it, operate it — and own the outcome.
+View portfolio
+aipa@aideazz.xyz
+Production services
+15
+CRM deals run by agents
+2,800+
+Published AI films
+8
+Years as Deputy CEO & CLO
+7
+ER Elena Revicheva
+Professional Outlook · 02 / 08
+The operating model
+Not a candidate plus tools. One AI-native operating unit.
+ER Elena
+Owns the decisions
+What should exist, how it must behave, and whether it actually worked.
+Requirements Architecture Orchestration Evaluation Deployment Monitoring Production decisions
++
+AI AIPA
+Executes at scale
+Implementation code, research, drafting, media generation and scheduled operations.
+Claude Code Cursor Specialised agents 5-provider LLM fallback 15 services · 20 scheduled jobs
+=
+E+A The unit
+Ships and stays accountable
+Live in production One named owner
+From an ambiguous problem to a deployed, measurable result — with one named owner who answers for it in production.
+Note · How I work Elena Revicheva · Oct 1, 2026
+I operate an AI-native development environment where specialized agents handle much of the implementation execution. I own requirements, architecture, orchestration, evaluation, deployment, monitoring and production decisions.
+The distinction
+I don’t sell unaided typing speed.
+I own the decisions that determine what gets built, what ships, how it behaves — and what happens when it fails.
+ER Elena Revicheva
+Professional Outlook · 03 / 08
+What I actually do
+I turn ambiguous business and creative problems into working AI-native systems.
+Define 01
+The outcome
+The problem and the measurable result it must move.
+Map 02
+The workflow
+Handoffs, controls and failure points .
+Choose 03
+The parts
+Models, APIs, tools, data — and where a human must approve .
+Direct 04
+The build
+Implementation through AI coding agents: Claude Code, Cursor .
+Evaluate 05
+The proof
+Test behaviour, score outputs, reject changes that make it worse .
+Operate 06
+The run
+Deploy, monitor, diagnose, iterate from production evidence .
+My development model
+Technical direction
++
+Architecture
++
+AI-assisted implementation
++
+Production ownership
+ER Elena Revicheva
+Professional Outlook · 04 / 08
+Where I create the most value
+Three lanes. One pattern underneath.
+Lane 01
+AI Operations
+Workflow discovery & automation
+Agent orchestration
+CRM & pipeline operations
+Monitoring & feedback loops
+Proof in production
+2,800+
+deals, 1,300+ contacts and 2,100+ companies attributed by agents in HubSpot — research, qualify, draft, one human tap, send.
+Lane 02
+AI Product & Transformation
+Prototype the experience
+Connect systems & deploy
+Organise operations around it
+Improve from evidence
+Proof in production
+420+
+audits across 210+ sites by my AI Visibility Audit API — a live public product scoring how ChatGPT, Perplexity and Claude see a business.
+Lane 03
+Creative AI Systems
+Concept, narrative & world-building
+Image · video · audio orchestration
+Production pipelines
+Published experiences
+Proof in production
+8 films
+published from my ATUONA universe — 99 poems in Russian and English, made end to end by my own pipeline.
+The through-line: I design intelligent systems and the experience around them — from the agents that run a business to the films they make.
+ER Elena Revicheva
+Professional Outlook · 05 / 08
+Evidence
+I operate systems, not slides.
+Live · one cloud VM · $0/month
+15
+long-running production services + 20 scheduled jobs
+All auto-restart. I am the architect and the on-call.
+Opportunities processed
+LangGraph pipeline · human decision gates
+11,000+
+Learns hourly from the decisions I record in the CRM.
+Discovery & qualification
+CRM deals run by agents
+HubSpot · source attribution
+2,800+
+1,300+ contacts · 2,100+ companies. Sending is fail-closed.
+AI operations · RevOps
+AI-visibility audits
+Public API · GEO / AEO
+420+
+14,000+ signals across 210+ sites. My own hub scores 100/100.
+GEO · AEO · Tech SEO
+Published AI films
+ATUONA AI Film Studio
+8
+Crimson Escape : 3:36, 16 generated shots, mixed to −15.7 LUFS.
+Creative AI production
+Automated tests
+Unit · integration · golden set
+600+
+Run in under a minute; a 5-provider LLM fallback chain.
+Reliability & evaluation
+Executive foundation
+Deputy CEO & Chief Legal Officer
+7 yrs
+Government digital-services operator: transformation, IT, governance.
+Leadership
+All figures are floors from production logs and the live CRM API, counted 28–29 September 2026.
+ER Elena Revicheva
+Professional Outlook · 06 / 08
+Ownership under failure
+What I do when it breaks — and what it’s called.
+Silent failure
+An integration that never said it was broken
+Found Trial sign-ups had never reached the CRM since launch, while the sender’s log looked healthy.
+Did Audited from the receiving end, root-caused, fixed, backfilled all 28 lost users.
+Vacuous guard
+A spending cap that could never fire
+Found The budget guard read a price field the vendor never sends, so every price passed.
+Did Fixed it against the vendor’s real response and published the postmortem.
+Evaluation gate
+The more complex model lost
+Found A RAG upgrade to my screening judge scored lower on an evaluation set built from my real decisions.
+Did Shipped it switched off. Accuracy beats sophistication.
+Graceful degradation
+A provider retired its models. Nothing went down.
+Found A vendor deprecated the models my agents used.
+Did The five-provider fallback chain kept the fleet serving — a config change, not an outage.
+Kintsugi, not cover-ups
+The repair stays visible. Postmortems with named failure modes are published openly.
+aideazz.xyz/ai-ops-wiki.html ↗
+ER Elena Revicheva
+Professional Outlook · 07 / 08
+Where I fit
+The roles I’m built for.
+AI operations & implementation 6
+AI Operations Lead AI Implementation Lead AI Automation Lead AI Workflow Architect AI Systems Operator Agentic Workflow Designer
+AI product & transformation 6
+AI Product & Automation Lead AI Transformation Lead AI Innovation Lead AI Adoption Lead Generative AI Product Lead AI Prototyping Lead
+Creative technology 5
+Creative Technologist — GenAI Generative AI Producer Creative AI Pipeline Builder GenAI Production Lead AI Innovation Producer
+Good fit
+Business problem Process
+System design AI & tools
+Implementation Deployment
+People Metrics Iteration
+Not my fit
+Roles whose core value is unaided coding, algorithm drills or live coding — or proving the work can be done without AI.
+Fully remote
+Panama · UTC−5 · overlaps US Eastern & Central
+LATAM-friendly teams
+English · Russian
+ER Elena Revicheva
+Professional Outlook · 08 / 08
+AI-native systems
+ownership.
+Former executive. Hands-on builder. Production operator. Creative technologist.
+I’m looking for a team that wants someone to own the path from an ambiguous problem to a deployed, measurable AI system.
+Email
+aipa@aideazz.xyz
+Portfolio
+aideazz.xyz/portfolio
+LinkedIn
+in/elenarevicheva
+AI films
+atuona.xyz/aifilmstudio
+Postmortems
+AI Ops Wiki
+Panama · Remote · UTC−5 All imagery generated on my ATUONA pipeline — Nano Banana Pro · Seedream 5 Pro · Flux 2 Max
