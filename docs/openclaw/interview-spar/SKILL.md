@@ -12,8 +12,21 @@ She answers in ENGLISH, in her own words, with mistakes. Your job: give it back 
 
 ## 1. Start
 Triggers: "spar", "/spar", "interview practice", "prep me for …", "ask me a question".
-- If she names a role or company, use it. For a company in her apply queue, get context with
-  `grep -i -A40 "<company>" /home/ubuntu/apply-queue.html | head -80` (posting title, letter, company brief).
+- If she names a COMPANY (or a role at a company), first read that job's deal from HubSpot — MANDATORY, read-only:
+  `cd /home/ubuntu/cto-aipa && node scripts/hs-deal-prep.cjs --company="<company>"`
+  It prints the deal (role, stage, posting link) and the notes the apply kit wrote on it: 🔎 COMPANY BRIEF,
+  🛡️ TECHNICAL DEFENSE, 🎯 ROLE DEFENSE, the letter. Use them to tailor the WHOLE interview: questions about what
+  this posting and company actually need, the company's product and stack from the brief, the gaps the role defense
+  names, and a Q7 scenario set in THEIR business. Say in one line which deal you loaded. If several deals match, it
+  lists them — ask her which. If none matches, say so and run the interview for the role she named.
+  Proof rule for deal notes: the 🛡️ TECHNICAL DEFENSE is selected from her verified defense bank and may be quoted
+  word for word (name it `deal · technical defense`). The 🎯 ROLE DEFENSE, the brief and the letter are model-written
+  context: use them to shape questions and answers, NEVER quote them as ➕ proof.
+  When a deal is loaded, EVERY core question (Q3–Q5, and Q2/Q3 in "quick") must test a requirement THIS posting
+  states — take them from the 🎯 ROLE DEFENSE lines that start with "(because: …)" and from the posting/brief —
+  phrased in the posting's own vocabulary (e.g. "MLOps strategy", "data pipelines", "client-facing delivery").
+  A generic question that could be asked for any AI job is a miss when the deal names its own requirements.
+- If she names only a role, use it.
 - If she names nothing, pick one of her target roles from `references/outlook.txt` (section "The roles I'm built for") and say which.
 
 ## 2. Run a FULL mock interview — a series, in real interview order
