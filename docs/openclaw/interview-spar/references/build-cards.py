@@ -60,4 +60,24 @@ for role, items in cards.items():
     tmp = os.path.join(OUT, f".{slug(role)}.tmp")
     open(tmp, "w", encoding="utf-8").write("\n".join(lines))
     os.replace(tmp, os.path.join(OUT, f"{slug(role)}.md"))
+# One combined sheet, injected into EVERY reply by the bundled bootstrap-extra-files hook (path cards/TOOLS.md —
+# the hook only accepts standard bootstrap file names). "/cards" must not depend on a model running a command:
+# on 7 Oct gpt-4.1 answered "/cards" with "you have no cards" while a card existed.
+CAP = 6000
+allc = sorted(((day, role, q, ans) for role, items in cards.items() for (q, ans), day in items.items()), reverse=True)
+sheet = ["# ELENA'S INTERVIEW CARDS — her polished mock-interview answers, newest first (auto-built every 10 min).",
+         "# When she sends /cards or 'my cards', show these EXACTLY (optionally only the role she names). Never invent cards.",
+         ""]
+if not allc:
+    sheet.append("(no cards yet — they appear after her first answered mock-interview question)")
+for day, role, q, ans in allc:
+    block = f"## {role} · {day}\nQ: {q}\nA: {ans}\n"
+    if sum(len(x) + 1 for x in sheet) + len(block) > CAP:
+        break
+    sheet.append(block)
+sd = os.path.join(os.path.dirname(OUT), "cards")
+os.makedirs(sd, exist_ok=True)
+tmp = os.path.join(sd, ".TOOLS.tmp")
+open(tmp, "w", encoding="utf-8").write("\n".join(sheet))
+os.replace(tmp, os.path.join(sd, "TOOLS.md"))
 print(f"cards: {sum(len(v) for v in cards.values())} answers across {len(cards)} role(s)")
