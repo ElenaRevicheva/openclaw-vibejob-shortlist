@@ -65,8 +65,12 @@ Put the concept's name at the END ("— that's called graceful degradation"), ne
 🎯 **Why this role asks it**
 1–2 lines: what the interviewer is really checking for this role.
 
-➕ **Proof you can add** (only if one fits)
-MANDATORY before writing this section: run `bash /home/ubuntu/.openclaw/workspace/skills/interview-spar/references/sources.sh`
+➕ **Proof you can add**
+WHEN A DEAL IS LOADED (you ran hs-deal-prep.cjs in this conversation): ALWAYS include this section, taking ONE
+sentence word for word from that output's `🛡️ TECHNICAL DEFENSE` block — the one that best backs her answer —
+labelled `deal · technical defense`. It is already in this conversation; no extra command needed. This is the
+apply kit's verified defense for THIS job; the interview must use it.
+OTHERWISE (no deal, or nothing in the defense fits) — MANDATORY before writing this section: run `bash /home/ubuntu/.openclaw/workspace/skills/interview-spar/references/sources.sh`
 and COPY one sentence from its output, word for word, naming where it came from (`outlook`, `defense-bank · <id>`
 or `wiki · <slug>`). If you did not run that command in this turn, or nothing there fits, OMIT this section.
 Never quote from memory. A proof that is not in that output is a fabrication — on 7 Oct 2026 a test session
@@ -104,6 +108,8 @@ message in this exact block (the gateway turns it into a Telegram voice note and
 - After the last answer: `[[tts:text]]Here is your answer, polished. <✅ text>. That's the end of the interview. Your debrief is in the chat.[[/tts:text]]`
 - "my cards": no voice block unless she asks to hear them.
 Write numbers the way they are said ("eleven thousand plus", "fifteen services").
+NEVER call the `tts` tool. The `[[tts:text]]` block is the ONLY voice — calling the tool as well sends her two
+audio messages (7 Oct 2026).
 
 ## 4. Hard rules
 - NEVER invent numbers, dates, model names, employers, projects, tools or results — in ANY section, including ✅.
@@ -117,15 +123,10 @@ Write numbers the way they are said ("eleven thousand plus", "fifteen services")
 - If she answers in Russian, still return the polished English version.
 
 ## 5. Keep the work
-MANDATORY after every polished answer: write the card with your exec tool, then add `💾 saved to your <role> cards`
-as the last line of your reply. Use exactly this shape (role-slug = lowercase role, spaces → hyphens):
-```
-mkdir -p /home/ubuntu/.openclaw/workspace/interview-cards
-cat >> /home/ubuntu/.openclaw/workspace/interview-cards/<role-slug>.md <<'CARD'
-## <YYYY-MM-DD> · Q<n>
-**Q:** <the question>
-**A:** <the polished answer>
-CARD
-```
-If the command fails, say so instead of the 💾 line. When she asks "my cards" or "cards for <role>", `cat` that file
-and send it back. These are her pre-call cheat sheets.
+Do NOT write cards yourself and NEVER write a "💾 saved" line. Cards are built automatically every 10 minutes from
+this conversation by `references/build-cards.py` (7 Oct 2026: a model claimed "💾 saved" without saving anything).
+Keep the exact `🎙️ Q<n>/<total> · <role>` and `✅ **Your answer, polished**` headings — the builder reads them.
+When she asks "my cards" or "cards for <role>": run
+`python3 /home/ubuntu/.openclaw/workspace/skills/interview-spar/references/build-cards.py && cat /home/ubuntu/.openclaw/workspace/interview-cards/<role-slug>.md`
+(role-slug = lowercase role, non-letters → hyphens; `ls` the folder if unsure) and send back EXACTLY what it prints.
+If the file does not exist, say so — never write cards from memory. These are her pre-call cheat sheets.
