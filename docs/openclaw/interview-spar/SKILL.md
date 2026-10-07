@@ -1,6 +1,6 @@
 ---
 name: interview-spar
-description: Interview sparring for Elena. Use when she says "spar", "/spar", "interview practice", "prep me for <role or company>", "ask me a question", or when she is answering a sparring question. Ask ONE interviewer-style tech question, then return her answer polished, plus what it means and why the role asks it.
+description: Mock interview for Elena. Use when she says "spar", "/spar", "mock interview", "interview practice", "prep me for <role or company>", or when she is answering a mock-interview question. Runs a full interview as a series of questions in real interview order; after each answer returns it polished, plus what it means and why the role asks it, then asks the next question; ends with a debrief.
 metadata: { "openclaw": { "emoji": "🎙️" } }
 ---
 
@@ -16,15 +16,27 @@ Triggers: "spar", "/spar", "interview practice", "prep me for …", "ask me a qu
   `grep -i -A40 "<company>" /home/ubuntu/apply-queue.html | head -80` (posting title, letter, company brief).
 - If she names nothing, pick one of her target roles from `references/outlook-facts.md` ("Target roles") and say which.
 
-## 2. Ask ONE question
-Phrase it exactly as a recruiter, hiring manager or AI interviewer (micro1's Zara, Mercor, Ethos) would for THAT role,
-with the real tech vocabulary they use. Rotate topics across a session, for example:
+## 2. Run a FULL mock interview — a series, in real interview order
+Default: **8 questions** (~25 min). "quick" = 4 (Q1, two core, Q7). "full" or "deep" = 10 (add two more core).
+At the start, say in one line: role, number of questions, and "answer each in English, your way; say 'stop' anytime".
+Plan the series before asking Q1, so topics never repeat, and follow this order:
+1. **Opener** — "Tell me about yourself" / "Walk me through your background and why this role."
+2. **Motivation / fit** — why this company or role, what she would do in the first 90 days.
+3–5. **Core technical** — three different topics from the list below, chosen for THIS role (and the posting, if known),
+   phrased with real interviewer vocabulary. Make Q5 a follow-up that digs one level deeper into one of her own
+   earlier answers ("You mentioned X — how exactly did you…?"), as live interviewers do.
+6. **Failure / behavioural** — "Tell me about a time something broke in production" / "a decision you got wrong".
+7. **Scenario** — a realistic situation at their company ("Our support team wants to deploy an agent next month…").
+8. **Closing** — "Any questions for us?" (polish her questions) or salary / availability (Panama, remote, UTC−5).
+
+Phrase every question exactly as a recruiter, hiring manager or AI interviewer (micro1's Zara, Mercor, Ethos) would
+for THAT role, with the real tech vocabulary they use. Core topics to choose from:
 LLM evaluation / evals · hallucinations and guardrails · RAG and retrieval · agent orchestration and human-in-the-loop ·
 reliability (fallbacks, idempotency, retries, fail-open vs fail-closed) · monitoring and observability · CRM / RevOps
 automation · cost and latency trade-offs · model selection · data privacy and PII · stakeholder change management ·
 measuring ROI of an AI rollout · GEO / AEO (AI visibility) · creative AI pipelines (for creative roles).
 
-Format: `🎙️ Q<n> · <role>`, the question, then `(answer by voice or text, in English, your way)`.
+Format: `🎙️ Q<n>/<total> · <role>`, the question, then `(answer by voice or text, in English, your way)`.
 Ask only the question. No hints and no model answer yet.
 
 ## 3. When she answers — reply in EXACTLY this shape (short, readable on a phone)
@@ -51,7 +63,16 @@ invented "Groq retired llama-3.1-70b in September 2024 … within 6 hours"; none
 🔧 **Fixed** (only if needed)
 Up to 3 short notes on what changed, e.g. "you said X — interviewers say Y". Kind, never condescending.
 
-End with: `Next question? (or "again" to retry this one)`
+Then, in the SAME message, ask the next question of the series (`🎙️ Q<n+1>/<total> · …`) — do not wait for
+"next". If she says "again", re-ask the same question; if "skip", move on; if "stop", go to the debrief.
+
+## 3b. Debrief — after the last answer (or "stop")
+📋 **Debrief · <role> · <n> questions**
+- **Strongest answer:** Q<n> — one line why.
+- **Work on:** the 2–3 patterns that repeated (e.g. "starts with details, not the point"; "skips the result";
+  "no proof"), each with one short fix.
+- **Words to own:** the 3–6 technical terms that came up, each with a 5–8-word plain meaning.
+- **Before the real call:** "say 'my cards' to read all <n> polished answers."
 
 ## 4. Hard rules
 - NEVER invent numbers, dates, model names, employers, projects, tools or results — in ANY section, including ✅.
