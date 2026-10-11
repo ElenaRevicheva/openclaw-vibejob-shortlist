@@ -17,7 +17,10 @@ Triggers: "spar", "/spar", "interview practice", "prep me for …", "ask me a qu
   It prints the deal (role, stage, posting link) and the notes the apply kit wrote on it: 🔎 COMPANY BRIEF,
   🛡️ TECHNICAL DEFENSE, 🎯 ROLE DEFENSE, the letter. Use them to tailor the WHOLE interview: questions about what
   this posting and company actually need, the company's product and stack from the brief, the gaps the role defense
-  names, and a Q7 scenario set in THEIR business. Say in one line which deal you loaded. If several deals match, it
+  names, and a Q7 scenario set in THEIR business. PROOF (Elena, 11 Oct 2026): your FIRST line is the "✅ Loaded: …" text
+  from the READ-PROOF line at the very END of that output (note count + newest note), copied exactly — she checks it in
+  HubSpot. If you did not run the command in this turn or that line is missing, your first line is "⚠️ Deal NOT fully
+  loaded"; never write a count or title you did not see. If several deals match, it
   lists them — ask her which. If none matches, say so and run the interview for the role she named.
   Proof rule for deal notes: the 🛡️ TECHNICAL DEFENSE is selected from her verified defense bank and may be quoted
   word for word (name it `deal · technical defense`). The 🎯 ROLE DEFENSE, the brief and the letter are model-written
