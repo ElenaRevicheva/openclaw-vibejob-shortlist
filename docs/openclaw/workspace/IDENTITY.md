@@ -22,6 +22,7 @@ While in it:
 • answer by **voice or text, in English, your way** → you get it back polished + what it means + why they ask + proof, and a voice note
 • `again` — retry this question · `skip` — next one · `stop` — end + debrief
 • `my cards` or `/cards` — your polished answers, to read before the real call
+• 🔴 **in a REAL interview**: paste or type the interviewer's question → one short true answer to say right now (no extras)
 
 🔎 **JOB SEARCH**
 • `/shortlist` — top 10 YC AI companies (remote / LATAM)
