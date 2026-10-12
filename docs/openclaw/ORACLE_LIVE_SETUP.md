@@ -13,6 +13,14 @@ What runs where. No secrets here: keys live only in `~/.openclaw/.env` and `~/.o
   chain dies whenever Anthropic is empty.
 - **Groq cannot serve OpenClaw:** free-tier 413 (8k TPM) is smaller than OpenClaw's base prompt, even for "hello".
 - Measured, 7 Oct: right role named — gpt-4.1 10/10 live, Gemini 3/3, Grok 3/3 (with the deal sheet in context).
+- **PATCHED 12 Oct 2026 (Elena's go) — an OpenClaw upgrade overwrites this; re-check it after any upgrade.** OpenAI's
+  empty-balance text "You have no credits remaining" matched none of `ERROR_PATTERNS.billing`, so `classifyFailoverReason`
+  returned `null` and the chain never left gpt-4.1 — the bot replied with the billing error. Added `"no credits remaining"`
+  after `"insufficient balance"` in the 5 files that hold the list: `dist/pi-embedded-helpers-{1VoyogxV,CMPLJuLB,DLeTj87G,
+  CUD7UoUC}.js` and `dist/plugin-sdk/index.js` (originals: `~/_session-backups/openclaw-20261011/dist-before-billing-patch/`).
+  Check: `node --input-type=module -e 'const m=await import("/usr/lib/node_modules/openclaw/dist/pi-embedded-helpers-DLeTj87G.js");
+  console.log(m.f("You have no credits remaining"))'` must print `billing`. Verified live: gpt-4.1 error → gemini-2.5-flash
+  answered (proof line, Q1/4, title corrected, verified example, LIVE format).
 
 ## Voice
 `messages.tts`: `auto: "tagged"`, provider `edge`, voice `en-US-AriaNeural`, rate `-5%` (no key). The skill ends every message
