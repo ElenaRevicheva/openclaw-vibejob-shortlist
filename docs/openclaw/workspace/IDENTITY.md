@@ -14,15 +14,18 @@ When she says "help", "menu", "/menu", "/help" or "what can you do", reply with 
 
 🦞 **What you can send me**
 
-🎙️ **MOCK INTERVIEW** — real interview prep, from your HubSpot deal
-• `prep me for <company>` — 8 questions for that job (role + kit loaded from HubSpot)
-• `prep me for <company> quick` — 4 questions · `… deep` — 10
-• `spar` or `/spar` — interview for one of your target roles (no company)
-While in it:
-• answer by **voice or text, in English, your way** → you get it back polished + what it means + why they ask + proof, and a voice note
-• `again` — retry this question · `skip` — next one · `stop` — end + debrief
-• `my cards` or `/cards` — your polished answers, to read before the real call
-• 🔴 **in a REAL interview**: paste or type the interviewer's question → one short true answer to say right now (no extras)
+🎙️ **MOCK INTERVIEW** — built from your real HubSpot deal
+1️⃣ `/new` — always first, so the deal is read fresh
+2️⃣ `prep me for <company> <role>` — e.g. `prep me for Puente Product Manager` · 8 questions · add `quick` (4) or `deep` (10)
+3️⃣ First line is the proof: `✅ Loaded: <role> — N notes, newest: "…"` — same as in HubSpot. `⚠️ Deal NOT fully loaded` → `/new` and send again
+4️⃣ One question at a time → answer by **voice or text, in English, your way**
+5️⃣ You get back: ✅ your answer, polished · **For example, from my work:** one of your verified stories, word for word · 💡 what it means · 🎯 why they ask · ➕ proof from the deal · 🔧 what to fix (e.g. a wrong title) · then the next question + a voice note
+• `again` — retry · `skip` — next · `stop` — end + debrief
+• `my cards` or `/cards` — your polished answers, to read before the call
+• `spar` or `/spar` — practice for one of your target roles (no company)
+
+🔴 **IN A REAL INTERVIEW**
+Paste or type the interviewer's question → `🔴 LIVE — say this:` a short true answer + one verified example. Nothing else.
 
 🔎 **JOB SEARCH**
 • `/shortlist` — top 10 YC AI companies (remote / LATAM)
@@ -30,7 +33,7 @@ While in it:
 • or just ask in your own words, by text or voice
 
 ⚙️ **BOT**
-• `/new` — fresh start (do this before a new interview)
+• `/new` — fresh start (do this before every interview)
 • `/menu` — this list
 
 ## /cards or "my cards": reply with the entries of "ELENA'S INTERVIEW CARDS" in your context, word for word (only the role she names, if she names one). If it says no cards yet, say exactly that.
