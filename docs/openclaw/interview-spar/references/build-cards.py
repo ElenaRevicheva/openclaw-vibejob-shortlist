@@ -12,7 +12,9 @@ import glob, json, os, re
 
 SESS = os.path.expanduser("~/.openclaw/agents/main/sessions")
 OUT = os.path.expanduser("~/.openclaw/workspace/interview-cards")
-UUID = re.compile(r"^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\.jsonl$")
+# 12 Oct 2026: "/new" renames a finished session to <uuid>.jsonl.reset.<time>; those are her real answers too
+# (the 11 Oct Puente PM session vanished from /cards when she sent /new at 11:28 UTC).
+UUID = re.compile(r"^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\.jsonl(\.reset\..+)?$")
 Q_RE = re.compile(r"🎙️\s*\**\s*Q(\d+)/(\d+)\s*·\s*([^\n*]+)\**\s*\n+(.+?)(?:\n|\(answer)", re.S)
 A_RE = re.compile(r"✅\s*\**Your answer, polished\**\s*\n+(.+?)(?:\n\s*\n?💡|\n\s*\n?🎯|\Z)", re.S)
 
@@ -36,7 +38,7 @@ def texts(path):
 
 
 cards = {}
-for path in sorted(glob.glob(os.path.join(SESS, "*.jsonl"))):
+for path in sorted(glob.glob(os.path.join(SESS, "*.jsonl*"))):
     if not UUID.match(os.path.basename(path)):
         continue
     pending = None  # the last question asked in this session
