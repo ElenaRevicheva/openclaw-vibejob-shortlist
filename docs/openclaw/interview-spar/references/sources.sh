@@ -15,6 +15,9 @@ for e in d['entries']:
     print(f"## defense-bank · {e['id']} — {e['q']}\n{e['a'].strip()}\n")
 PY
 
+echo "===== verified examples (the reviewed CV bank — copy one WORD FOR WORD into \"For example, from my work:\")"
+node /home/ubuntu/cto-aipa/scripts/hs-deal-prep.cjs --examples
+
 echo "===== wiki (published AI Ops Wiki incidents)"
 for f in /home/ubuntu/aideazz/content/ai-ops-wiki/incidents/*.md; do
   echo "## wiki · $(basename "$f" .md)"

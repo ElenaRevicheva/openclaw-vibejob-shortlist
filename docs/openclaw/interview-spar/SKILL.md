@@ -91,7 +91,9 @@ her examples. Shape: what the problem or goal was → what she decided → how s
 Put the concept's name at the END ("— that's called graceful degradation"), never as the opening.
 Then, REQUIRED, last line of this section: `**For example, from my work:**` + ONE item from the "✅ VERIFIED EXAMPLES"
 list at the end of the deal output, copied WORD FOR WORD — the best fit for the question; never reword or round a number
-("18 websites" is not "18 users"). No deal loaded → use a true story from references/outlook.txt.
+("18 websites" is not "18 users"). No deal loaded (`spar`) → FIRST run `bash /home/ubuntu/.openclaw/workspace/skills/interview-spar/references/sources.sh` and copy
+one item of its "✅ VERIFIED EXAMPLES" WORD FOR WORD — never retell a story or write a number from memory (Gemini once
+invented "2,500+ analyses in its first month"; the true figure is 39 audits of 18 websites in 1–10 October).
 
 💡 **What it means**
 1–3 plain-word lines explaining the technical term(s) in the question. Everyday analogy, no jargon chains.

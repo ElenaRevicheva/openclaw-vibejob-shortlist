@@ -1,6 +1,6 @@
 # Professional Outlook — mechanical text extract (no human or model rewrote it)
-# Source: AIPA_AITCF docs/applications/professional-outlook/outlook.html @ 71a516d (the file the PDF is built from).
-# Refresh: re-run the extract when outlook.html changes. Figures are floors counted 28-29 Sep 2026.
+# Source: AIPA_AITCF docs/applications/professional-outlook/outlook.html @ 9ffcd455 (the file the PDF is built from).
+# Refresh when outlook.html changes: python3 extract_outlook.py < outlook.html (this folder), then put this 3-line header back on top. Figures verified 11 Oct 2026 from server logs (1–10 Oct) and live HubSpot.
 
 Elena Revicheva — Professional Outlook 2026
 ER Elena Revicheva
@@ -12,28 +12,28 @@ I design the system, direct AI-assisted implementation, ship it, operate it — 
 View portfolio
 aipa@aideazz.xyz
 Production services
-15
-CRM deals run by agents
-2,800+
-Published AI films
-8
+15+
+CRM records my agents wrote
+3,000+
+AI film-making machinery
+9 films
 Years as Deputy CEO & CLO
 7
 ER Elena Revicheva
 Professional Outlook · 02 / 08
 The operating model
 Not a candidate plus tools. One AI-native operating unit.
-ER Elena
-Owns the decisions
+ER Elena Revicheva
+Principal: the human backing every decision
 What should exist, how it must behave, and whether it actually worked.
 Requirements Architecture Orchestration Evaluation Deployment Monitoring Production decisions
 +
-AI AIPA
-Executes at scale
+AI AI Personal Assistants (AIPAs)
+Execute at scale
 Implementation code, research, drafting, media generation and scheduled operations.
-Claude Code Cursor Specialised agents 5-provider LLM fallback 15 services · 20 scheduled jobs
+Claude Code Cursor Specialised agents 5-provider LLM fallback 15+ services · 25+ scheduled jobs
 =
-E+A The unit
+E+A Human-backed AI unit
 Ships and stays accountable
 Live in production One named owner
 From an ambiguous problem to a deployed, measurable result — with one named owner who answers for it in production.
@@ -83,8 +83,8 @@ Agent orchestration
 CRM & pipeline operations
 Monitoring & feedback loops
 Proof in production
-2,800+
-deals, 1,300+ contacts and 2,100+ companies attributed by agents in HubSpot — research, qualify, draft, one human tap, send.
+3,000+
+records my agents wrote into HubSpot: 1,800+ job leads from my own job search and 800+ business prospects — research, qualify, draft, one human tap, send.
 Lane 02
 AI Product & Transformation
 Prototype the experience
@@ -92,8 +92,8 @@ Connect systems & deploy
 Organise operations around it
 Improve from evidence
 Proof in production
-420+
-audits across 210+ sites by my AI Visibility Audit API — a live public product scoring how ChatGPT, Perplexity and Claude see a business.
+39 audits
+of 18 websites by my AI Visibility Audit API ↗ in 1–10 October alone — 18 run by people on the public page. Anyone enters a website, no login, and gets 34 checks on how ChatGPT, Perplexity and Claude see it.
 Lane 03
 Creative AI Systems
 Concept, narrative & world-building
@@ -101,48 +101,48 @@ Image · video · audio orchestration
 Production pipelines
 Published experiences
 Proof in production
-8 films
-published from my ATUONA universe — 99 poems in Russian and English, made end to end by my own pipeline.
+9 films
+published from my ATUONA universe — 99 multidisciplinary art fragments in Russian and English, made end to end by my own pipeline.
 The through-line: I design intelligent systems and the experience around them — from the agents that run a business to the films they make.
 ER Elena Revicheva
 Professional Outlook · 05 / 08
 Evidence
 I operate systems, not slides.
-Live · one cloud VM · $0/month
-15
-long-running production services + 20 scheduled jobs
+Live · one cloud server
+15+
+long-running production services + 25+ scheduled jobs
 All auto-restart. I am the architect and the on-call.
-Opportunities processed
-LangGraph pipeline · human decision gates
+Job postings screened
+My job-search agent · human decision gates
 11,000+
 Learns hourly from the decisions I record in the CRM.
 Discovery & qualification
-CRM deals run by agents
+CRM records written by agents
 HubSpot · source attribution
-2,800+
-1,300+ contacts · 2,100+ companies. Sending is fail-closed.
-AI operations · RevOps
+3,000+
+1,800+ job leads from my job search, 800+ business prospects. A send is refused if an attachment fails to load.
+AI operations · CRM automation
 AI-visibility audits
 Public API · GEO / AEO
-420+
-14,000+ signals across 210+ sites. My own hub scores 100/100.
+39 audits
+Of 18 websites in 1–10 October (server logs); 18 run by people on the public page, 21 by my outreach agents. 34 checks each.
 GEO · AEO · Tech SEO
-Published AI films
+AI film-making machinery
 ATUONA AI Film Studio
-8
-Crimson Escape : 3:36, 16 generated shots, mixed to −15.7 LUFS.
+9 films
+Crimson Escape : 3:36, 16 generated shots, mixed to streaming loudness (−16 LUFS).
 Creative AI production
 Automated tests
 Unit · integration · golden set
 600+
-Run in under a minute; a 5-provider LLM fallback chain.
+Unit, integration and golden-set tests, plus a 5-provider LLM fallback chain.
 Reliability & evaluation
 Executive foundation
 Deputy CEO & Chief Legal Officer
 7 yrs
-Government digital-services operator: transformation, IT, governance.
+Regional e-government operator: I ran the board process and the legal side of moving public services online.
 Leadership
-All figures are floors from production logs and the live CRM API, counted 28–29 September 2026.
+All figures are floors from production logs and the live CRM API, re-counted 11 October 2026.
 ER Elena Revicheva
 Professional Outlook · 06 / 08
 Ownership under failure
@@ -162,7 +162,7 @@ Did Shipped it switched off. Accuracy beats sophistication.
 Graceful degradation
 A provider retired its models. Nothing went down.
 Found A vendor deprecated the models my agents used.
-Did The five-provider fallback chain kept the fleet serving — a config change, not an outage.
+Did The five-provider chain kept the bots answering. One pipeline still lost three good jobs for two days, until I routed it through the chain.
 Kintsugi, not cover-ups
 The repair stays visible. Postmortems with named failure modes are published openly.
 aideazz.xyz/ai-ops-wiki.html ↗
@@ -182,7 +182,7 @@ System design AI & tools
 Implementation Deployment
 People Metrics Iteration
 Not my fit
-Roles whose core value is unaided coding, algorithm drills or live coding — or proving the work can be done without AI.
+Roles judged mainly on hand-written code or live-coding drills. Instead, I’ll walk you through a live system I run.
 Fully remote
 Panama · UTC−5 · overlaps US Eastern & Central
 LATAM-friendly teams
@@ -203,4 +203,8 @@ AI films
 atuona.xyz/aifilmstudio
 Postmortems
 AI Ops Wiki
+Audit API
+aideazz.xyz/api
+Atlas · AI ad angles
+Live board
 Panama · Remote · UTC−5 All imagery generated on my ATUONA pipeline — Nano Banana Pro · Seedream 5 Pro · Flux 2 Max
