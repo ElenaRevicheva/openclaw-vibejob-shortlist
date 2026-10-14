@@ -33,6 +33,14 @@ with `[[tts:text]]…[[/tts:text]]` → Telegram voice note + full text. The `tt
   directives only switch OpenAI/ElevenLabs voices, not Edge. OpenAI `nova` is multilingual: Whisper transcribed its Spanish and
   English samples word for word, and it returns Opus (a real Telegram voice note). Spanish mode = skill §0b.
 - Voice notes she SENDS: Whisper (Groq `whisper-large-v3-turbo`, then OpenAI) with no fixed language — Spanish is detected.
+  **`tools.media.audio.prompt` = her vocabulary** (14 Oct 2026, Pitz): "Pitz, Chalán, taller, cotización, repuestos, diagnóstico.
+  AIdeazz, EspaLuz, HubSpot, OpenClaw, CTO AIPA, LangGraph, Whisper." — copied from CTO AIPA's `WHISPER_PROMPT` idea. Before it,
+  OpenClaw sent Whisper only its default "Transcribe the audio." A/B on Oracle (same 2 models, same clips): test sentences
+  groq 9/15 → 15/15 terms right, OpenAI 7/15 → 14/15 ("es Palus" → EspaLuz, "Landgraf" → LangGraph, "Pitts/Chalan" → Pitz/Chalán);
+  English stayed English; her 7 real notes (7–11 Oct, all English) kept the same meaning — punctuation only. A plain list beat
+  "Interview practice in English and Spanish. …" (OpenAI 14 vs 13). Add a word only after Whisper got it wrong in a real note.
+  Rollback: `openclaw config unset tools.media.audio.prompt` + restart (backup
+  `~/_session-backups/openclaw-glossary-20261014/openclaw.json.before-glossary`).
 - Rollback: `openclaw config set messages.tts.provider edge` + `systemctl --user restart openclaw-gateway`
   (backup `~/_session-backups/pitz-20261014/openclaw.json.before-voice`).
 
