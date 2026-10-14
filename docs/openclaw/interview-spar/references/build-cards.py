@@ -18,7 +18,7 @@ UUID = re.compile(r"^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12
 # 14 Oct 2026: Spanish interviews — the model may drop " · <role>", write "(responde …)" and "✅ Tu respuesta, pulida".
 # The cards must not depend on the model keeping English markers, so both spellings are read.
 Q_RE = re.compile(r"🎙️\s*\**\s*Q(\d+)/(\d+)\s*(?:·\s*([^\n*]+))?\**\s*\n+\**(.+?)\**\s*(?:\n|\((?:answer|responde))", re.S | re.I)
-A_RE = re.compile(r"✅\s*\**(?:Your answer, polished|Tu respuesta,? pulida)\**[^\n]*\n+(.+?)(?:\n\s*\n?💡|\n\s*\n?🎯|\Z)", re.S | re.I)
+A_RE = re.compile(r"✅\s*\**(?:Your answer, polished|(?:Tu )?respuesta,? pulida)\**[^\n]*\n+(.+?)(?:\n\s*\n?💡|\n\s*\n?🎯|\Z)", re.S | re.I)
 
 
 def slug(s):
