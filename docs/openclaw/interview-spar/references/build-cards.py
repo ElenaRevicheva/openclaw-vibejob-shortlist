@@ -15,8 +15,10 @@ OUT = os.path.expanduser("~/.openclaw/workspace/interview-cards")
 # 12 Oct 2026: "/new" renames a finished session to <uuid>.jsonl.reset.<time>; those are her real answers too
 # (the 11 Oct Puente PM session vanished from /cards when she sent /new at 11:28 UTC).
 UUID = re.compile(r"^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\.jsonl(\.reset\..+)?$")
-Q_RE = re.compile(r"🎙️\s*\**\s*Q(\d+)/(\d+)\s*·\s*([^\n*]+)\**\s*\n+(.+?)(?:\n|\(answer)", re.S)
-A_RE = re.compile(r"✅\s*\**Your answer, polished\**\s*\n+(.+?)(?:\n\s*\n?💡|\n\s*\n?🎯|\Z)", re.S)
+# 14 Oct 2026: Spanish interviews — the model may drop " · <role>", write "(responde …)" and "✅ Tu respuesta, pulida".
+# The cards must not depend on the model keeping English markers, so both spellings are read.
+Q_RE = re.compile(r"🎙️\s*\**\s*Q(\d+)/(\d+)\s*(?:·\s*([^\n*]+))?\**\s*\n+\**(.+?)\**\s*(?:\n|\((?:answer|responde))", re.S | re.I)
+A_RE = re.compile(r"✅\s*\**(?:Your answer, polished|Tu respuesta,? pulida)\**[^\n]*\n+(.+?)(?:\n\s*\n?💡|\n\s*\n?🎯|\Z)", re.S | re.I)
 
 
 def slug(s):
@@ -52,7 +54,7 @@ for path in sorted(glob.glob(os.path.join(SESS, "*.jsonl*"))):
         qs = Q_RE.findall(t)
         if qs:
             n, total, role, q = qs[-1]
-            pending = (role.strip(), q.strip())
+            pending = ((role or "").strip() or "Interview", q.strip())
 
 os.makedirs(OUT, exist_ok=True)
 for role, items in cards.items():

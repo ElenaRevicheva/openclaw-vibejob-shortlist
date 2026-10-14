@@ -23,8 +23,16 @@ What runs where. No secrets here: keys live only in `~/.openclaw/.env` and `~/.o
   answered (proof line, Q1/4, title corrected, verified example, LIVE format).
 
 ## Voice
-`messages.tts`: `auto: "tagged"`, provider `edge`, voice `en-US-AriaNeural`, rate `-5%` (no key). The skill ends every message
+`messages.tts`: `auto: "tagged"`, **provider `openai`, model `gpt-4o-mini-tts`, voice `nova`** (since 14 Oct 2026; key from
+`OPENAI_API_KEY` in `~/.openclaw/.env`), edge `en-US-AriaNeural` kept as the automatic fallback. The skill ends every message
 with `[[tts:text]]…[[/tts:text]]` → Telegram voice note + full text. The `tts` tool is forbidden (double audio).
+- **Why (14 Oct, Pitz Spanish interview):** Microsoft's Edge voice service answers **403** from this server for every voice —
+  node-edge-tts 1.2.10 (OpenClaw) AND python edge_tts 7.2.7 (EspaLuz) — so Edge voice notes were not reliable. Per-message voice
+  directives only switch OpenAI/ElevenLabs voices, not Edge. OpenAI `nova` is multilingual: Whisper transcribed its Spanish and
+  English samples word for word, and it returns Opus (a real Telegram voice note). Spanish mode = skill §0b.
+- Voice notes she SENDS: Whisper (Groq `whisper-large-v3-turbo`, then OpenAI) with no fixed language — Spanish is detected.
+- Rollback: `openclaw config set messages.tts.provider edge` + `systemctl --user restart openclaw-gateway`
+  (backup `~/_session-backups/pitz-20261014/openclaw.json.before-voice`).
 
 ## Context injected into EVERY reply (bundled hook `bootstrap-extra-files`)
 `hooks.internal.entries.bootstrap-extra-files.paths = ["deals/TOOLS.md", "cards/TOOLS.md"]`; the other 3 bundled hooks are disabled.

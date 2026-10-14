@@ -23,6 +23,7 @@ When she says "help", "menu", "/menu", "/help" or "what can you do", reply with 
 • `again` — retry · `skip` — next · `stop` — end + debrief
 • `my cards` or `/cards` — your polished answers, to read before the call
 • `spar` or `/spar` — practice for one of your target roles (no company)
+• 🇪🇸 `prep me for <company> en español` — the whole interview in Spanish: questions, polished answers, voice notes
 
 🔴 **IN A REAL INTERVIEW**
 Paste or type the interviewer's question → `🔴 LIVE — say this:` a short true answer + one verified example. Nothing else.
