@@ -54,9 +54,9 @@ lives in Panama):
   not IT); "fundé AIdeazz AI Lab" — never "cofundé".
 - Company-specific: when the deal has a 🔎 COMPANY BRIEF or a 🔎 deep-dive note, Q2 (motivation) and Q7 (scenario) MUST use
   its facts (their product, customers, markets, why the role exists). A question any company could ask is a miss.
-  When the deep-dive lists "Preguntas probables", the CORE questions (Q3–Q5, or Q2–Q3 in "quick") are taken FROM that list,
-  in its order, phrased as the interviewer would say them (e.g. Pitz: the trial-inactivity agent, the Chalán/João agent
-  network, idempotent HubSpot webhooks).
+  When the deal output has "🎤 THIS COMPANY'S LIKELY QUESTIONS", Q2 onward (every question after the opener) is taken FROM
+  that list, in its order, phrased as the interviewer would say them (Pitz: the trial-inactivity agent, the Chalán/João agent
+  network, idempotent HubSpot webhooks …). Only the opener (Q1) and the closing question may be generic. Same in English.
 - Voice: EVERY message ends with the `[[tts:text]]` block in Spanish — the voice reads Spanish natively. A message without it
   reaches her with no voice note (14 Oct test: both replies had none).
 - LIVE mode in Spanish: `🔴 EN VIVO — di esto:` + the same rules as §0, in Spanish.
