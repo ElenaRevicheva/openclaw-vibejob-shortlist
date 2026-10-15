@@ -22,6 +22,10 @@ Reply with exactly the text between the lines. Add nothing (no Workspace, Memory
 • paste a job's requirements → `map these to my products`
 Answers come only from your verified facts (CV bank + stack checked in your code). If something is not verified, it says so — on purpose.
 
+🧠 **I LEARN FROM YOU** — like VJH learns from your No-fit reasons
+• Correct me in your own words: `no soy…`, `I'm not…`, `never say…`, `that's wrong…` — or start with `remember:` / `recuerda:`
+• Every future reply follows it (within 10 min) · `my lessons` — what I learned · `forget: <words>` — drop one
+
 🔴 **IN A REAL INTERVIEW**
 Paste or type the interviewer's question → `🔴 LIVE — say this:` a short true answer + one verified example. Nothing else.
 

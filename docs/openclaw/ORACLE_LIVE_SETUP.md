@@ -48,6 +48,13 @@ with `[[tts:text]]…[[/tts:text]]` → Telegram voice note + full text. The `tt
 `hooks.internal.entries.bootstrap-extra-files.paths = ["deals/TOOLS.md", "cards/TOOLS.md", "proof/TOOLS.md"]`; the other 3 bundled hooks are disabled.
 - `deals/TOOLS.md` ← cron `*/30` `cd ~/cto-aipa && node scripts/hs-deal-prep.cjs --digest --out=… --proof-out=…/proof/TOOLS.md` (AIPA_AITCF repo). ≤11,000 chars.
 - `cards/TOOLS.md` ← cron `*/10` `python3 …/skills/interview-spar/references/build-cards.py` (cards rebuilt from her real sessions).
+  **Since 15 Oct 2026 it also LEARNS FROM HER CORRECTIONS** (her go: "like VJH does"): her own words that carry a clear signal —
+  `no soy…`, `I'm not…`, `never say…`, `that's wrong…`, `remember:`/`recuerda:` — go into a permanent ledger
+  `workspace/interview-cards/lessons.json` (survives /new and deleted sessions) and sit at the TOP of this sheet as "ELENA'S
+  CORRECTIONS", newest first, in every reply. `my lessons` shows them; `forget: <words>` drops one. Her words only, never the
+  model's "🔧" paraphrase; an answer like "I served seven years being a CEO…" is not a lesson. On her real history it learned exactly
+  1 (14 Oct, "No soy developer full stack manual"); live test: the Spanish self-intro applied it unasked. Test:
+  `OPENCLAW_SESSIONS=<copy> OPENCLAW_CARDS_OUT=<tmp> python3 build-cards.py` (never a UUID-named test session — it would become hers).
 - `proof/TOOLS.md` ← same cron line (15 Oct 2026): her VERIFIED FACTS — CV-bank summary, products, stack line, the stack of each
   product (verified from the code), career in Spanish, the 23 verified examples EN + ES, and for every deal with a 🔎 deep-dive its
   true ✅ Loaded line + its likely questions. ~21,400 chars. Last in the list = nearest the end of the prompt.
