@@ -80,6 +80,17 @@ with `[[tts:text]]…[[/tts:text]]` → Telegram voice note + full text. The `tt
 - Rollback: `openclaw config set messages.tts.provider edge` + `systemctl --user restart openclaw-gateway`
   (backup `~/_session-backups/pitz-20261014/openclaw.json.before-voice`).
 
+## Local patches inside OpenClaw's dist (root-owned; an upgrade OVERWRITES them — re-apply and re-test after any upgrade)
+1. **Billing failover** (12 Oct): `"no credits remaining"` / `"insufficient balance"` added to ERROR_PATTERNS (4 files) so an empty
+   OpenAI balance fails over instead of replying with the error. Backups `~/_session-backups/openclaw-20261011/`.
+2. **WhatsApp voice = Opus** (15 Oct, Elena's go): `resolveOutputFormat()` returned Opus only for Telegram, MP3 for everything else,
+   and the WhatsApp sender marks every audio `ptt: true` — an MP3 voice note plays on WhatsApp Web but NOT in the phone app (her
+   report: "WA cell does not work"). Patched in 4 files (`pi-embedded-8DITBEle.js`, `pi-embedded-CM97XTkp.js`, `reply-CYMZTXlH.js`,
+   `reply-CrwRmeCr.js`): `if (channelId === "telegram" || channelId === "whatsapp") return TELEGRAM_OUTPUT;` — one line each,
+   `node --check` ok. The WA sender already rewrites `audio/ogg` → `audio/ogg; codecs=opus`. Verified: WA voice before = `.mp3`
+   (16:12, 16:21 UTC), after = `[[audio_as_voice]] … .opus` (16:38:29), sent 16:38:31. Backups
+   `~/_session-backups/openclaw-wa-20261015/dist-before-opus/`. Check: `grep -c 'channelId === "whatsapp") return TELEGRAM_OUTPUT' dist/*.js`.
+
 ## Context injected into EVERY reply (bundled hook `bootstrap-extra-files`)
 `hooks.internal.entries.bootstrap-extra-files.paths = ["deals/TOOLS.md", "cards/TOOLS.md", "proof/TOOLS.md"]`; the other 3 bundled hooks are disabled.
 - `deals/TOOLS.md` ← cron `*/30` `cd ~/cto-aipa && node scripts/hs-deal-prep.cjs --digest --out=… --proof-out=…/proof/TOOLS.md` (AIPA_AITCF repo). ≤11,000 chars.
