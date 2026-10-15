@@ -54,7 +54,12 @@ md5 OK, 0 migrated files, gateway start 11:11:35 UTC unchanged).
   answered (proof line, Q1/4, title corrected, verified example, LIVE format).
 
 ## Voice
-`messages.tts`: `auto: "tagged"`, **provider `openai`, model `gpt-4o-mini-tts`, voice `nova`** (since 14 Oct 2026; key from
+`messages.tts`: `auto: "tagged"`, **provider `openai`, model `tts-1` (since 15 Oct 16:17 UTC; was `gpt-4o-mini-tts`), voice `nova`**.
+**Why tts-1:** gpt-4o-mini-tts STALLED — 7 of 15 voice replies failed on 15 Oct, each exactly 30 s (`messages.tts.timeoutMs` default
+30000) then Edge fallback → 403. Bench on Oracle: gpt-4o-mini-tts 5.0/5.0/4.7 s and one 60 s stall (137 bytes); tts-1 12/12 in
+1.7–3.5 s, Spanish read back clearly by Whisper. After: 3/3 voice replies through OpenClaw in 2–3 s. WhatsApp gets MP3 (fixed in
+this version — flat-line bubble, plays); Telegram gets Opus. CTO AIPA spoken replies: `CTO_VOICE_TTS_MODEL=tts-1` in Oracle `.env`.
+Was: `messages.tts`: `auto: "tagged"`, **provider `openai`, model `gpt-4o-mini-tts`, voice `nova`** (since 14 Oct 2026; key from
 `OPENAI_API_KEY` in `~/.openclaw/.env`), edge `en-US-AriaNeural` kept as the automatic fallback. The skill ends every message
 with `[[tts:text]]…[[/tts:text]]` → Telegram voice note + full text. The `tts` tool is forbidden (double audio).
 - **Why (14 Oct, Pitz Spanish interview):** Microsoft's free Edge voice service answers **403** for every voice — from Oracle AND
