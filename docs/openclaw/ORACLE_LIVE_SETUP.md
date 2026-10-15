@@ -7,10 +7,19 @@ What runs where. No secrets here: keys live only in `~/.openclaw/.env` and `~/.o
 - npm `openclaw@2026.2.14`, state `~/.openclaw`, workspace `~/.openclaw/workspace`. Telegram @OpenClaw_VibeJobsList_bot.
 - Shortlist pipeline (unchanged): `~/job-list-filter` (copy of `main`, not git), cron `0 */6 * * *`.
 - **Genuine:** npm `openclaw`, MIT, maintainers steipete (Peter Steinberger) + vincentkoc, github.com/openclaw/openclaw.
-- **WhatsApp channel:** configured in Feb (`dmPolicy allowlist`, `allowFrom` = her number) but NEVER linked (no WhatsApp credentials,
-  0 channel log lines). OpenClaw's own docs recommend a DEDICATED number; her personal/business number = "personal-number fallback"
-  (`selfChatMode`, chat in "Message yourself"). WhatsApp Web (Baileys) = unofficial client → never link the number she uses for
-  client outreach without her explicit go.
+- **WhatsApp channel — LINKED 15 Oct 2026 ~16:05 UTC to her WhatsApp Business number (her explicit go, after the risk was
+  explained: OpenClaw docs recommend a dedicated number; WhatsApp Web/Baileys is an unofficial client).** Settings (backup
+  `~/_session-backups/openclaw-wa-20261015/openclaw.json.before-wa`): `dmPolicy: allowlist`, `allowFrom` = her own number ONLY
+  (the Feb value was a "+507XXXXXXXX" placeholder), `groupPolicy: allowlist`, `selfChatMode: true` (she talks to it in "Message
+  yourself"; replies are prefixed), `sendReadReceipts: false` (read receipts only ever go to ACCEPTED senders, so clients' messages
+  are never marked read and never answered). Linked with the documented `openclaw channels login --channel whatsapp` (QR shown to
+  her as a PNG decoded-and-verified first); credentials `~/.openclaw/credentials/whatsapp` chmod 700/600. Gateway restart 16:07:23
+  UTC: `[whatsapp] starting provider` + `Listening for personal WhatsApp inbound messages`, Telegram provider started too.
+  Unlink: WhatsApp Business → Linked devices → log out the OpenClaw device (or `openclaw channels logout --channel whatsapp`).
+  Do NOT import `dist/login-qr-*.js` from a script — it runs the whole CLI and exits.
+  **Verified live 16:08 UTC:** `[whatsapp] Inbound message … (direct)` → `Auto-replied`; gpt-4.1; true ✅ Loaded line + Pitz 🎤 Q1 in
+  Spanish; 0 truncation. WhatsApp and Telegram DMs share ONE main session (OpenClaw default) — a conversation continues across both.
+  ⚠️ Everything she types in "Message yourself" now goes to the coach (she used that chat as a notepad for client drafts).
 
 ## Upgrade — TESTED 15 Oct 2026, NOT applied (Elena: "only with test, no rebuilding, no overwriting what you created")
 Newest npm = 2026.10.3 needs Node ≥24.16; every release from 2026.7.1 needs Node ≥22.22.3 — Oracle's system Node 22.22.0 runs
