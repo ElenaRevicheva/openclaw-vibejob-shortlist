@@ -6,6 +6,28 @@ What runs where. No secrets here: keys live only in `~/.openclaw/.env` and `~/.o
 - systemd **user** unit `openclaw-gateway` → `systemctl --user status openclaw-gateway` (a plain `systemctl` does not see it).
 - npm `openclaw@2026.2.14`, state `~/.openclaw`, workspace `~/.openclaw/workspace`. Telegram @OpenClaw_VibeJobsList_bot.
 - Shortlist pipeline (unchanged): `~/job-list-filter` (copy of `main`, not git), cron `0 */6 * * *`.
+- **Genuine:** npm `openclaw`, MIT, maintainers steipete (Peter Steinberger) + vincentkoc, github.com/openclaw/openclaw.
+- **WhatsApp channel:** configured in Feb (`dmPolicy allowlist`, `allowFrom` = her number) but NEVER linked (no WhatsApp credentials,
+  0 channel log lines). OpenClaw's own docs recommend a DEDICATED number; her personal/business number = "personal-number fallback"
+  (`selfChatMode`, chat in "Message yourself"). WhatsApp Web (Baileys) = unofficial client → never link the number she uses for
+  client outreach without her explicit go.
+
+## Upgrade — TESTED 15 Oct 2026, NOT applied (Elena: "only with test, no rebuilding, no overwriting what you created")
+Newest npm = 2026.10.3 needs Node ≥24.16; every release from 2026.7.1 needs Node ≥22.22.3 — Oracle's system Node 22.22.0 runs
+13 processes (cto-aipa, DragonTrade, whitespace, n8n…), so upgrading Node for one bot was ruled out. Newest on Node 22.22.0 =
+**2026.6.35**: installed side-by-side (`~/_scratch/openclaw-next`) and run on two COPIES of `~/.openclaw` (Telegram/WhatsApp
+off, no bot token). Blockers, each against her conditions:
+1. `Unknown model: openai/gpt-4.1` — not in its bundled catalog → every turn silently fell back to Gemini (needs a custom model entry).
+2. Config is INVALID until relabelled: `messages.tts.openai/edge` → `messages.tts.providers.openai/microsoft` + `speakerVoice`;
+   `channels.telegram.streamMode` → `streaming.mode`. Values map 1:1 (validated on the copy). `doctor --fix` would also rename
+   `anthropic/claude-sonnet-4-5` to a newer Sonnet; gpt-4.1/gemini-2.5-flash/grok-3/gpt-oss-120b are not on its rename lists.
+3. ONE-WAY state migrations on first start: cron store → SQLite (`cron/jobs.json.migrated`), update-check → shared SQLite. A rollback
+   = restore `~/_session-backups/openclaw-upgrade-20261015/dot-openclaw.before.tgz`, not just reinstalling.
+4. WhatsApp became an external plugin (`clawhub:@openclaw/whatsapp`) — unused here.
+What worked on 2026.6.35: exec ran the deal reader, the true ✅ Loaded line, a verified example copied word for word.
+**Test-harness trap:** `openclaw agent --local` does NOT inject `bootstrap-extra-files` (deals/cards/proof) in either version — a
+faithful upgrade test needs a second GATEWAY on another port with channels off, not `--local`. Live untouched (config/.env/crontab
+md5 OK, 0 migrated files, gateway start 11:11:35 UTC unchanged).
 
 ## Models — `agents.defaults.model` (5 providers, the fleet's)
 `openai/gpt-4.1` → `google/gemini-2.5-flash` → `xai/grok-3` → `groq/openai/gpt-oss-120b` → `anthropic/claude-sonnet-4-5`
