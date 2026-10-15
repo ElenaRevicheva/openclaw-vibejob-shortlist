@@ -8,14 +8,19 @@ Reply with exactly the text between the lines. Add nothing (no Workspace, Memory
 
 🎙️ **MOCK INTERVIEW** — built from your real HubSpot deal
 1️⃣ `/new` — always first, so the deal is read fresh
-2️⃣ `prep me for <company> <role>` — e.g. `prep me for Puente Product Manager` · 8 questions · add `quick` (4) or `deep` (10)
+2️⃣ `prep me for <company> <role>` — e.g. `prep me for Pitz Developer` · 8 questions · `quick` (4) or `deep` (10) · add `en español` for Spanish
 3️⃣ First line is the proof: `✅ Loaded: <role> — N notes, newest: "…"` — same as in HubSpot. `⚠️ Deal NOT fully loaded` → `/new` and send again
-4️⃣ One question at a time → answer by **voice or text, in English, your way**
-5️⃣ You get back: ✅ your answer, polished · **For example, from my work:** one of your verified stories, word for word · 💡 what it means · 🎯 why they ask · ➕ proof from the deal · 🔧 what to fix (e.g. a wrong title) · then the next question + a voice note
+4️⃣ One question at a time → answer by **voice or text, in English or Spanish, your way**
+5️⃣ You get back: ✅ your answer, polished · **For example, from my work:** one of your verified stories, word for word · 💡 what it means · 🎯 why they ask · ➕ proof from the deal · 🔧 what to fix · then the next question + a voice note
 • `again` — retry · `skip` — next · `stop` — end + debrief
 • `my cards` or `/cards` — your polished answers, to read before the call
 • `spar` or `/spar` — practice for one of your target roles (no company)
-• 🇪🇸 `prep me for <company> en español` — the whole interview in Spanish: questions, polished answers, voice notes
+
+💬 **ASK ABOUT YOU** — any time, no command, English or Spanish
+• `help me say my background in Spanish`
+• `which of my products use Node, Python, PostgreSQL, React?`
+• paste a job's requirements → `map these to my products`
+Answers come only from your verified facts (CV bank + stack checked in your code). If something is not verified, it says so — on purpose.
 
 🔴 **IN A REAL INTERVIEW**
 Paste or type the interviewer's question → `🔴 LIVE — say this:` a short true answer + one verified example. Nothing else.
@@ -28,5 +33,6 @@ Paste or type the interviewer's question → `🔴 LIVE — say this:` a short t
 ⚙️ **BOT**
 • `/new` — fresh start (do this before every interview)
 • `/menu` — this list
+• Updates itself: your job deals from VJH / HubSpot every 30 min · your polished answers every 10 min
 
 ---

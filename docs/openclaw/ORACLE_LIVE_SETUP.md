@@ -34,7 +34,7 @@ with `[[tts:text]]…[[/tts:text]]` → Telegram voice note + full text. The `tt
   English samples word for word, and it returns Opus (a real Telegram voice note). Spanish mode = skill §0b.
 - Voice notes she SENDS: Whisper (Groq `whisper-large-v3-turbo`, then OpenAI) with no fixed language — Spanish is detected.
   **`tools.media.audio.prompt` = her vocabulary** (14 Oct 2026, Pitz): "Pitz, Chalán, taller, cotización, repuestos, diagnóstico.
-  AIdeazz, EspaLuz, HubSpot, OpenClaw, CTO AIPA, LangGraph, Whisper." — copied from CTO AIPA's `WHISPER_PROMPT` idea. Before it,
+  AIdeazz, EspaLuz, HubSpot, OpenClaw, CTO AIPA, Claude Code, Cursor, LangGraph, Whisper." (Claude Code + Cursor added 15 Oct: her "con Cursor y Claude Code" was heard as "cloud code") — copied from CTO AIPA's `WHISPER_PROMPT` idea. Before it,
   OpenClaw sent Whisper only its default "Transcribe the audio." A/B on Oracle (same 2 models, same clips): test sentences
   groq 9/15 → 15/15 terms right, OpenAI 7/15 → 14/15 ("es Palus" → EspaLuz, "Landgraf" → LangGraph, "Pitts/Chalan" → Pitz/Chalán);
   English stayed English; her 7 real notes (7–11 Oct, all English) kept the same meaning — punctuation only. A plain list beat
@@ -45,10 +45,19 @@ with `[[tts:text]]…[[/tts:text]]` → Telegram voice note + full text. The `tt
   (backup `~/_session-backups/pitz-20261014/openclaw.json.before-voice`).
 
 ## Context injected into EVERY reply (bundled hook `bootstrap-extra-files`)
-`hooks.internal.entries.bootstrap-extra-files.paths = ["deals/TOOLS.md", "cards/TOOLS.md"]`; the other 3 bundled hooks are disabled.
-- `deals/TOOLS.md` ← cron `*/30` `cd ~/cto-aipa && node scripts/hs-deal-prep.cjs --digest --out=…` (AIPA_AITCF repo). ≤11,000 chars.
+`hooks.internal.entries.bootstrap-extra-files.paths = ["deals/TOOLS.md", "cards/TOOLS.md", "proof/TOOLS.md"]`; the other 3 bundled hooks are disabled.
+- `deals/TOOLS.md` ← cron `*/30` `cd ~/cto-aipa && node scripts/hs-deal-prep.cjs --digest --out=… --proof-out=…/proof/TOOLS.md` (AIPA_AITCF repo). ≤11,000 chars.
 - `cards/TOOLS.md` ← cron `*/10` `python3 …/skills/interview-spar/references/build-cards.py` (cards rebuilt from her real sessions).
-Why: anything left for a model to fetch got skipped and then invented (gpt-4.1 named "AI Product Engineer @ Shortical").
+- `proof/TOOLS.md` ← same cron line (15 Oct 2026): her VERIFIED FACTS — CV-bank summary, products, stack line, the stack of each
+  product (verified from the code), career in Spanish, the 23 verified examples EN + ES, and for every deal with a 🔎 deep-dive its
+  true ✅ Loaded line + its likely questions. ~21,400 chars. Last in the list = nearest the end of the prompt.
+Why: anything left for a model to fetch got skipped and then invented (gpt-4.1 named "AI Product Engineer @ Shortical"; on
+14–15 Oct it never ran the deal reader for Pitz, made up "✅ Loaded … 7 notes", a client demo, a Slack bot, React dashboards).
+**Size caps — `agents.defaults.bootstrapMaxChars = 25000`, `bootstrapTotalMaxChars = 70000` (15 Oct 2026).** OpenClaw's defaults
+are 20,000 per file and **24,000 in TOTAL**; AGENTS.md+SOUL+TOOLS+IDENTITY+USER+HEARTBEAT already take ~16,000, so since 7 Oct
+the deals sheet was cut 10,984 → 7,676 chars and the cards sheet 4,247 → 661 on every reply — 189 warnings in the journal
+(`truncating in injected context`), nothing told her. After the raise: 0 warnings on 8 test sessions. Check after any change:
+`journalctl --user -u openclaw-gateway --since "-1 h" | grep -c "truncating in injected"` must print 0.
 
 ## Telegram commands
 `channels.telegram.commands = {native: false, nativeSkills: false}` (only hers in the "/" list).
