@@ -147,6 +147,23 @@ for role, items in cards.items():
 # One combined sheet, injected into EVERY reply by the bundled bootstrap-extra-files hook (path cards/TOOLS.md —
 # the hook only accepts standard bootstrap file names). "/cards" must not depend on a model running a command:
 # on 7 Oct gpt-4.1 answered "/cards" with "you have no cards" while a card existed.
+# 16 Oct 2026: a misheard name in her voice transcript ("STO AIPA", "CloudCode") was learned as her correction and then
+# obeyed in every reply. The ledger keeps her raw words; the sheet shows them with the known mishearings repaired.
+_NAME_FIX = [
+    (re.compile(r"\b(?:STO|CTO|SEO)\s*-?\s*A?I?PA\b", re.I), "CTO AIPA"),
+    (re.compile(r"\b(?:cloud|clot|clod)\s*-?\s*code\b", re.I), "Claude Code"),
+    (re.compile(r"\bA(?:j|ge)ende\b|\bajente\b", re.I), "agente"),
+    (re.compile(r"\bA?espa\s?luz\b", re.I), "EspaLuz"),
+    (re.compile(r"\bREG\b"), "RAG"),
+]
+
+
+def fix_names(text):
+    for rx, right in _NAME_FIX:
+        text = rx.sub(right, text)
+    return text
+
+
 CAP = 9000   # 15 Oct 2026: room for her corrections on top (OpenClaw's total budget was raised to 70,000 the same day)
 allc = sorted(((day, role, q, ans) for role, items in cards.items() for (q, ans), day in items.items()), reverse=True)
 lessons = learn(paths)
@@ -157,7 +174,7 @@ if lessons:
              "# older one. Facts and numbers still come only from her VERIFIED FACTS sheet. 'my lessons' → show these lines exactly.",
              ""]
     for l in lessons:
-        line = f"- {l['date'][:10]} ({l['via']}): \"{l['text']}\""
+        line = f"- {l['date'][:10]} ({l['via']}): \"{fix_names(l['text'])}\""
         if sum(len(x) + 1 for x in sheet) + len(line) > LESSONS_MAX:
             break
         sheet.append(line)
