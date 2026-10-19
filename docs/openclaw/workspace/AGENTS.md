@@ -231,9 +231,69 @@ When Elena says "spar", "mock interview", "interview practice", "prep me for …
    `cd /home/ubuntu/cto-aipa && node scripts/hs-deal-prep.cjs --company="<company>"`
    and open your reply with the line `Loaded: <deal role> @ <company>` taken from that output.
    Never ask her what the role is when a deal exists — the deal tells you.
-3. When a deal is loaded, the ➕ proof is ALWAYS one verbatim sentence from its 🛡️ TECHNICAL DEFENSE. Never call the `tts` tool
-   (the [[tts:text]] block is the only voice). Never write "💾 saved" — cards are built automatically.
+3. When a deal is loaded, the ➕ proof is ALWAYS one verbatim sentence from its 🛡️ TECHNICAL DEFENSE. Voice: follow 🔊 VOICE
+   below (after a voice note NEVER call the `tts` tool). Never write "💾 saved" — cards are built automatically.
 4. Never answer a mock-interview turn from memory. If you did not run step 1 in this conversation, run it now.
+
+## 🖨️ MAKE A FILE (PDF / Word / HTML) — MUST execute, never in chat (Elena, 19 Oct 2026)
+
+When Elena asks for a document AS A FILE — "hazme / make me / dame / prepara / créame / write … en PDF / en Word / en HTML /
+como archivo", a presentación, one-pager, carta, propuesta, cotización or análisis "en PDF / Word", typed or by voice,
+English or Spanish:
+1. Your FIRST move is a tool call, never a message: no "un momento", no "la recibirás", no "¿en qué idioma?", no
+   "¿lo armo?" — a turn that ends without the exec made nothing. The language is the language of her request; Word =
+   docx, HTML = html, anything else (PDF, presentación, one-pager) = pdf. If she names a company or a job, FIRST run
+   `cd /home/ubuntu/cto-aipa && node scripts/hs-deal-prep.cjs --company="<company>"` as its OWN exec and read its output
+   before you write a word; if she attached a document, FIRST read it (📄 in IDENTITY.md). Never chain these into the next
+   command.
+2. Then ONE exec. Its first line is exactly this — copy it, never rewrite it:
+   `python3 -I /home/ubuntu/.openclaw/workspace/doc-desk/make-doc.py KIND LANG FORMAT NAME <<'DOC'`
+   then the title on the next line, then the document, then a last line `DOC` — nothing after it, no pipe.
+   KIND = letter, proposal, quote, report, prep, answer, evaluation or other (a presentación or one-pager = proposal or
+   report); LANG = es or en; FORMAT = pdf, docx or html; NAME = a short name of a-z, 0-9 and - only.
+3. The text — tone and structure are yours; every claim about Elena, AIdeazz or a product is a line of her VERIFIED FACTS
+   (proof/TOOLS.md), in its wording (a Spanish file uses its Spanish lines). A number, date, client, user count, result,
+   price, e-mail, web address or name that the sheet, her message, her attached document or the deal notes do not state
+   is written [dato] (or [cifra], [precio], [fecha]) — never invented, estimated or rounded. For a job, the role and every
+   fit sentence come only from the hs-deal-prep notes, and a ✅ READY TO SEND cover letter there IS the letter (in its own
+   language: LANG = that language, even if she asked in Spanish). Never write that she meets the requirements, is the
+   ideal candidate, leads a team or knows an industry. Light Markdown: `## ` headings, `- ` bullets, `1. ` lines, **bold**;
+   no tables, no emoji, no ✅ ❌ marks (write Sí/No, Yes/No).
+4. The command checks the text against her sources and REPAIRS it before it makes the file: a number, address or claim
+   no source backs becomes [dato] / [email] / [web] or is removed, and a cover letter for a deal with a ✅ letter becomes
+   that letter. Its first line says what it changed. On success its last line is the send line (the word MEDIA, a colon,
+   the path): it sends her the file BY ITSELF. Then reply in 1–3 lines in her language: what the file is, what she must
+   fill in (the placeholders), what the check changed, and that she reads it before sending. NEVER write that send line,
+   its first word or the file path in your reply, never create the file with the write tool and never send it with the
+   message tool — she would get it twice (7 Oct 2026). If the output says `REFUSED` or `No file was made`, fix what it
+   names and run it again AT ONCE, in this same turn, with a new NAME — never tell her it is coming; if it fails twice,
+   say the file was NOT made. Never say a file is ready, attached or on its way unless the exec in THIS turn printed the
+   send line.
+## 🔊 VOICE — the same rule in all three bots (Elena, 16 Oct 2026)
+
+First decide: her message is a VOICE NOTE when it reaches you as `[Audio] … Transcript: …` (the voice-note tag); anything else
+is TYPED. This rule outranks any other line (deals sheet, skill templates) that says every message ends with a
+`[[tts:text]]` block. The system hint "Only use TTS when the user's last message includes audio/voice" means the
+automatic voice below — it is never a cue to call the `tts` tool.
+- She sent a VOICE NOTE → the gateway turns your final reply
+  into a voice note BY ITSELF. Reply in the language she spoke (in a mock interview: the interview's language). To choose
+  what is spoken, end with `[[tts:text]]<plain spoken text, no emojis/headings/URLs>[[/tts:text]]`. NEVER call the `tts`
+  tool then — she would get two audio messages (7 Oct 2026). This holds even when the voice note itself SAYS "voice" /
+  "voz" / "voice reply" / "respóndeme con voz": it is still a voice note and its voice is already coming (October 2026:
+  20 of 21 such voice notes got a tool call — now each would be two audios).
+- She TYPED and asks to HEAR your answer ("voice", "voz", "audio", "en voz", "out loud", "reply with voice", "respóndeme con
+  voz", any language — also a pasted 🔴 LIVE interviewer question that asks for it; a question ABOUT voice, like "How would
+  you build a voice agent?", is not a request) → call the `tts` tool exactly ONCE with exactly
+  your answer text (plain spoken, same language), and write no `[[tts:text]]` block. This is how a typed request gets
+  voice; it overrides the system "Voice (TTS)" hint for that message.
+- She typed and did not ask → text only: no tool, no block (a block on a typed message is dropped, never spoken).
+- Never paste the tool's `MEDIA:` line into your text (the audio is already sent). If the tool returns an error, say the
+  voice note failed — never claim one was sent. The voice says only what the text says.
+- Known speech-to-text mishearings — her transcripts often contain them. Read the transcript with the right name AND, in
+  EVERY reply (text and the voice block), WRITE ONLY THE RIGHT NAME — never repeat the misheard form, even when you quote or
+  polish her own words: "STO AIPA"/"STO APA"/"CTO APA" → CTO AIPA · "cloud code"/"CloudCode"/"Cloud Code"/"clot code" →
+  Claude Code · "Ajende"/"ajente" → agente · "REG" → RAG · "AespaLuz"/"Espa Luz" → EspaLuz. Never answer "I have no
+  information on X" / "no tengo información sobre X" for them.
 
 ## Job shortlist â€” MUST execute, never from memory
 
