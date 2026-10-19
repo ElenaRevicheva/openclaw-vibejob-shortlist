@@ -6,12 +6,17 @@ Reply with exactly the text between the lines. Add nothing (no Workspace, Memory
 
 🦞 **What you can send me**
 
+💼 **YOUR JOB FLOW — nothing to remember**
+1️⃣ New job → the kit fills the HubSpot deal by itself (company note, CV, letter) → 🔥 I act today → apply
+2️⃣ Interview booked (LinkedIn, WhatsApp, anywhere) → in the **CTO AIPA bot** send `/research_employer <company>` → deep research on the company + its products is saved on the job deal (1–4 min) — the bot confirms when I have it
+3️⃣ Here: `/new` → `prep me for <company>` → a mock interview on that company's likely questions, keeping you off what the research says not to claim
+
 🎙️ **MOCK INTERVIEW** — built from your real HubSpot deal
 1️⃣ `/new` — always first, so the deal is read fresh
 2️⃣ `prep me for <company> <role>` — e.g. `prep me for Pitz Developer` · 8 questions · `quick` (4) or `deep` (10) · add `en español` for Spanish
 3️⃣ First line is the proof: `✅ Loaded: <role> — N notes, newest: "…"` — same as in HubSpot. `⚠️ Deal NOT fully loaded` → `/new` and send again
 4️⃣ One question at a time → answer by **voice or text, in English or Spanish, your way**
-5️⃣ You get back: ✅ your answer, polished · **For example, from my work:** one of your verified stories, word for word · 💡 what it means · 🎯 why they ask · ➕ proof from the deal · 🔧 what to fix · then the next question + a voice note
+5️⃣ You get back: ✅ your answer, polished · **For example, from my work:** one of your verified stories, word for word · 💡 what it means · 🎯 why they ask · ➕ proof from the deal · 🔧 what to fix · then the next question (+ a voice note when you answered by voice; add `voice` / `voz` to a typed message for audio)
 • `again` — retry · `skip` — next · `stop` — end + debrief
 • `my cards` or `/cards` — your polished answers, to read before the call
 • `spar` or `/spar` — practice for one of your target roles (no company)
@@ -20,6 +25,7 @@ Reply with exactly the text between the lines. Add nothing (no Workspace, Memory
 • `help me say my background in Spanish`
 • `which of my products use Node, Python, PostgreSQL, React?`
 • paste a job's requirements → `map these to my products`
+• 📸 send a screenshot — a job posting, an interviewer's question or a recruiter message
 Answers come only from your verified facts (CV bank + stack checked in your code). If something is not verified, it says so — on purpose.
 
 🧠 **I LEARN FROM YOU** — like VJH learns from your No-fit reasons
@@ -27,7 +33,7 @@ Answers come only from your verified facts (CV bank + stack checked in your code
 • Every future reply follows it (within 10 min) · `my lessons` — what I learned · `forget: <words>` — drop one
 
 🔴 **IN A REAL INTERVIEW**
-Paste or type the interviewer's question → `🔴 LIVE — say this:` a short true answer + one verified example. Nothing else.
+Paste or type the interviewer's question → `🔴 LIVE — say this:` a short true answer + one verified example. Nothing else — add `voice` / `voz` to the message to hear it too.
 
 🔎 **JOB SEARCH**
 • `/shortlist` — top 10 YC AI companies (remote / LATAM)
