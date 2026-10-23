@@ -35,6 +35,20 @@ Answers come only from your verified facts (CV bank + stack checked in your code
 🔴 **IN A REAL INTERVIEW**
 Paste or type the interviewer's question → `🔴 LIVE — say this:` a short true answer + one verified example. Nothing else — add `voice` / `voz` to the message to hear it too.
 
+🎓 **CASE TASK → DEFEND IT IN PERSON** — any company
+1️⃣ They send you a task → send me the file with the caption `task for <company>` → I save it on the company's HubSpot deal and build a study pack (2–5 min, I message you when it's ready)
+2️⃣ You submit → send me your document and slides with the caption `my deliverables for <company>` → same
+3️⃣ `walk me through the task` · `walk me through my deliverables` → one block at a time: exact text · simple words · what they may ask · what you say
+• `next` · `P12` / `D7` / `slide 3` — jump · `quiz me` — I ask, you answer, I grade it against your own document
+• `packs` — your packs · `pack <company>` — load one (e.g. `pack Pitz`) · `unpack` — unload (also automatic when the deal is won or lost)
+• Only one company is loaded at a time. Its pack lives on the HubSpot deal, so VJH and CTO AIPA see it too
+
+📄 **YOUR FILES**
+• Send a PDF or Word → I read it to the last page and tell you what it is (job post, recruiter message, contract: terms + risks), then ask what you want
+• `make me a <letter / one-pager / proposal> in PDF` (or Word, HTML) → I send you the file
+
+📌 **MY RULE** — your words set the format: "paragraph by paragraph" = one paragraph per message, never a summary
+
 🔎 **JOB SEARCH**
 • `/shortlist` — top 10 YC AI companies (remote / LATAM)
 • `/linkedin` — top 5 as a ready LinkedIn post

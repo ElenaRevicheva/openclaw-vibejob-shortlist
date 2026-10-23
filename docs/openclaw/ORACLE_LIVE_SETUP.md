@@ -38,8 +38,15 @@ What worked on 2026.6.35: exec ran the deal reader, the true ✅ Loaded line, a 
 faithful upgrade test needs a second GATEWAY on another port with channels off, not `--local`. Live untouched (config/.env/crontab
 md5 OK, 0 migrated files, gateway start 11:11:35 UTC unchanged).
 
-## Models — `agents.defaults.model` (5 providers, the fleet's)
-`openai/gpt-4.1` → `google/gemini-2.5-flash` → `xai/grok-3` → `groq/openai/gpt-oss-120b` → `anthropic/claude-sonnet-4-5`
+## Models — `agents.defaults.model` (4 providers since 23 Oct 2026)
+`openai/gpt-4.1` → `google/gemini-2.5-flash` → `xai/grok-3` → `anthropic/claude-sonnet-4-5`
+- **23 Oct 2026 — failover PROVEN live, Groq removed, alerts added.** `openclaw agent --local` with a fake OPENAI key →
+  401 → gemini-2.5-flash answered in 1.4 s. But it fails over SILENTLY, and 133/133 replies in 40 real sessions were
+  gpt-4.1, so nobody would notice a dead key. `groq/openai/gpt-oss-120b` removed (free tier 8,000 TPM vs prompts of
+  38k median / 79k max tokens — it could never answer). AIPA_AITCF `scripts/openclaw-fallback-alert.cjs`: cron
+  `2-59/10` `--scan` reads the session files → Telegram alert when a model failed and which backup answered (once per
+  provider + reason per 12 h; `test-*` sessions ignored); cron `5 14 * * *` `--probe` = 1-token call to every model in
+  the chain, alert on credits/key failure. The same Anthropic key serves OpenClaw, cto-aipa and VJH.
 - **Claude last:** v2026.2.14 returns an Anthropic billing error as a chat reply instead of failing over, so a Claude-first
   chain dies whenever Anthropic is empty.
 - **Groq cannot serve OpenClaw:** free-tier 413 (8k TPM) is smaller than OpenClaw's base prompt, even for "hello".
@@ -92,7 +99,7 @@ with `[[tts:text]]…[[/tts:text]]` → Telegram voice note + full text. The `tt
    `~/_session-backups/openclaw-wa-20261015/dist-before-opus/`. Check: `grep -c 'channelId === "whatsapp") return TELEGRAM_OUTPUT' dist/*.js`.
 
 ## Context injected into EVERY reply (bundled hook `bootstrap-extra-files`)
-`hooks.internal.entries.bootstrap-extra-files.paths = ["deals/TOOLS.md", "cards/TOOLS.md", "proof/TOOLS.md"]`; the other 3 bundled hooks are disabled.
+`hooks.internal.entries.bootstrap-extra-files.paths = ["deals/TOOLS.md", "cards/TOOLS.md", "proof/TOOLS.md", "prod/TOOLS.md", "pack/TOOLS.md", "pack2/TOOLS.md", "pack3/TOOLS.md", "pack4/TOOLS.md"]` (23 Oct 2026); the other 3 bundled hooks are disabled.
 - `deals/TOOLS.md` ← cron `*/30` `cd ~/cto-aipa && node scripts/hs-deal-prep.cjs --digest --out=… --proof-out=…/proof/TOOLS.md` (AIPA_AITCF repo). ≤11,000 chars.
 - `cards/TOOLS.md` ← cron `*/10` `python3 …/skills/interview-spar/references/build-cards.py` (cards rebuilt from her real sessions).
   **Since 15 Oct 2026 it also LEARNS FROM HER CORRECTIONS** (her go: "like VJH does"): her own words that carry a clear signal —
@@ -113,14 +120,18 @@ the deals sheet was cut 10,984 → 7,676 chars and the cards sheet 4,247 → 661
 (`truncating in injected context`), nothing told her. After the raise: 0 warnings on 8 test sessions. Check after any change:
 `journalctl --user -u openclaw-gateway --since "-1 h" | grep -c "truncating in injected"` must print 0.
 
+- `pack/…pack4/TOOLS.md` ← the ONE active study pack (23 Oct 2026): a company's case task + Elena's submitted deliverables, kept as `🎓 STUDY PACK` notes on its HubSpot deal by AIPA_AITCF `scripts/hs-study-pack.cjs` (file uploaded, text split by code, coaching by claude-opus-5-5 with every number checked, fallback = llm-resilience 'quality'); cron `15,45` `--refresh` rebuilds it from HubSpot and unloads it when the deal is won/lost or 30 days old. Every line the script prints ends `[proof xxxxxx]` — gpt-4.1 twice reported "loaded" with no tool call.
+- Caps now `bootstrapMaxChars = 40000`, `bootstrapTotalMaxChars = 270000` (injected ~205k with the Pitz pack).
+
 ## Telegram commands
 `channels.telegram.commands = {native: false, nativeSkills: false}` (only hers in the "/" list).
-`customCommands`: /menu /spar /cards /shortlist /linkedin. `/new` is native: not listed, still works typed.
+`customCommands`: /menu /spar /cards /shortlist /linkedin /pack /packs /unpack (study packs, 23 Oct 2026). `/pack <company>` is a SKILL (`workspace/skills/pack|packs|unpack/SKILL.md`): as plain rules gpt-4.1 ran it 3/5 times ("study X" was read as a mock interview); as a one-purpose skill 5/5 + 3/3 without the slash. `/new` is native: not listed, still works typed.
 The menu text lives in `workspace/HELP.md` AND verbatim at the end of `workspace/IDENTITY.md` (bootstrap = always in context).
 
 ## Workspace files kept in git (this folder)
-`workspace/AGENTS.md`, `workspace/IDENTITY.md`, `workspace/HELP.md`, `interview-spar/` (SKILL.md + references).
+`workspace/AGENTS.md`, `workspace/IDENTITY.md`, `workspace/HELP.md`, `workspace/skills/pack|packs|unpack/`, `interview-spar/` (SKILL.md + references). Mirrored from Oracle 23 Oct 2026.
 NOT in git (personal): `USER.md`, `RESUME_CONTEXT.md`, `interview-cards/`, `cards/`, `deals/`, sessions.
 
 ## Backups
+`~/_session-backups/openclaw-studypacks-20261023/` and `openclaw-defend-20261023/` (23 Oct: openclaw.json, AGENTS/IDENTITY/HELP, crontab before each change).
 `~/_session-backups/openclaw-spar-20261007/` on Oracle: every file and config before each 7 Oct change.
