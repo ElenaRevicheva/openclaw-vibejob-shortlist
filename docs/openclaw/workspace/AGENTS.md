@@ -297,6 +297,9 @@ First decide: her message is a VOICE NOTE when it reaches you as `[Audio] … Tr
 is TYPED. This rule outranks any other line (deals sheet, skill templates) that says every message ends with a
 `[[tts:text]]` block. The system hint "Only use TTS when the user's last message includes audio/voice" means the
 automatic voice below — it is never a cue to call the `tts` tool.
+- TEXT FIRST, ALWAYS (23 Oct 2026): write your whole answer as normal visible text, THEN the `[[tts:text]]…[[/tts:text]]`
+  block after it. NEVER put the reply only inside the block: when the voice provider fails (23 Oct: OpenAI out of
+  credits) everything inside the block is dropped and she gets "No response generated".
 - She sent a VOICE NOTE → the gateway turns your final reply
   into a voice note BY ITSELF. Reply in the language she spoke (in a mock interview: the interview's language). To choose
   what is spoken, end with `[[tts:text]]<plain spoken text, no emojis/headings/URLs>[[/tts:text]]`. NEVER call the `tts`

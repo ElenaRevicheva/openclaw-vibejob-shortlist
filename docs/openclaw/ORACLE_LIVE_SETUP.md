@@ -38,8 +38,16 @@ What worked on 2026.6.35: exec ran the deal reader, the true ✅ Loaded line, a 
 faithful upgrade test needs a second GATEWAY on another port with channels off, not `--local`. Live untouched (config/.env/crontab
 md5 OK, 0 migrated files, gateway start 11:11:35 UTC unchanged).
 
-## Models — `agents.defaults.model` (4 providers since 23 Oct 2026)
-`openai/gpt-4.1` → `google/gemini-2.5-flash` → `xai/grok-3` → `anthropic/claude-sonnet-4-5`
+## Models — `agents.defaults.model` (since 23 Oct 2026 ~22:48 UTC)
+`anthropic/claude-sonnet-4-5` → `google/gemini-2.5-flash` → `xai/grok-3` → `openai/gpt-4.1`
+- **23 Oct 22:35 UTC OpenAI ran out of credits** ("You have no credits remaining"): gpt-4.1 failed on every message, Gemini
+  answered (the waterfall worked), the fallback alert fired. Claude moved FIRST to use the \$100 promo credit (expires 8 Nov
+  2026); OpenAI LAST until topped up. Prompt caching makes a Claude turn cheap (test: 10 uncached input tokens).
+- **Never put a model id OpenClaw 2026.2.14 does not know:** `anthropic/claude-sonnet-5-5` → "Agent failed before reply:
+  Unknown model" — a CONFIG error is NOT failed over, the bot is dead until reverted (happened for ~2 min, 23 Oct).
+- **Voice = OpenAI tts-1 only** (Edge = 403 since 14 Oct): with OpenAI empty every voice reply fails. AGENTS.md VOICE rule
+  "TEXT FIRST": visible answer, then the `[[tts:text]]` block — Gemini had put the whole reply inside the block and she got
+  "No response generated".
 - **23 Oct 2026 — failover PROVEN live, Groq removed, alerts added.** `openclaw agent --local` with a fake OPENAI key →
   401 → gemini-2.5-flash answered in 1.4 s. But it fails over SILENTLY, and 133/133 replies in 40 real sessions were
   gpt-4.1, so nobody would notice a dead key. `groq/openai/gpt-oss-120b` removed (free tier 8,000 TPM vs prompts of
