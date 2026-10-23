@@ -125,7 +125,7 @@ the deals sheet was cut 10,984 → 7,676 chars and the cards sheet 4,247 → 661
 
 ## Telegram commands
 `channels.telegram.commands = {native: false, nativeSkills: false}` (only hers in the "/" list).
-`customCommands`: /menu /spar /cards /shortlist /linkedin /pack /packs /unpack (study packs, 23 Oct 2026). `/pack <company>` is a SKILL (`workspace/skills/pack|packs|unpack/SKILL.md`): as plain rules gpt-4.1 ran it 3/5 times ("study X" was read as a mock interview); as a one-purpose skill 5/5 + 3/3 without the slash. `/new` is native: not listed, still works typed.
+`customCommands`: /menu /spar /cards /shortlist /linkedin /pack /packs /unpack /quiz (study packs, 23 Oct 2026; `/quiz` skill asks ONLY the question — as a plain rule it once graded an answer she never gave). `/pack <company>` is a SKILL (`workspace/skills/pack|packs|unpack/SKILL.md`): as plain rules gpt-4.1 ran it 3/5 times ("study X" was read as a mock interview); as a one-purpose skill 5/5 + 3/3 without the slash. `/new` is native: not listed, still works typed.
 The menu text lives in `workspace/HELP.md` AND verbatim at the end of `workspace/IDENTITY.md` (bootstrap = always in context).
 
 ## Workspace files kept in git (this folder)
