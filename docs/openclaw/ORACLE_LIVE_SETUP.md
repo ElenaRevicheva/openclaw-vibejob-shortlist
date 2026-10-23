@@ -39,9 +39,12 @@ faithful upgrade test needs a second GATEWAY on another port with channels off, 
 md5 OK, 0 migrated files, gateway start 11:11:35 UTC unchanged).
 
 ## Models — `agents.defaults.model` (since 23 Oct 2026 ~22:48 UTC)
-`anthropic/claude-sonnet-4-5` → `google/gemini-2.5-flash` → `xai/grok-3` → `openai/gpt-4.1`
+`anthropic/claude-opus-4-6` → `anthropic/claude-sonnet-4-5` → `google/gemini-2.5-flash` → `xai/grok-3` → `openai/gpt-4.1`
+- **23 Oct ~23:05 UTC — Opus first** (Elena: the most profound model while the Claude promo lasts). opus-4-6 is the newest
+  Opus in this version's catalog (`openclaw models list --all --provider anthropic`). Cold turn ≈ $0.42 (cache write),
+  warm turn ≈ $0.03 (cache read).
 - **23 Oct 22:35 UTC OpenAI ran out of credits** ("You have no credits remaining"): gpt-4.1 failed on every message, Gemini
-  answered (the waterfall worked), the fallback alert fired. Claude moved FIRST to use the \$100 promo credit (expires 8 Nov
+  answered (the waterfall worked), the fallback alert fired. Claude moved FIRST to use the $100 promo credit (expires 8 Nov
   2026); OpenAI LAST until topped up. Prompt caching makes a Claude turn cheap (test: 10 uncached input tokens).
 - **Never put a model id OpenClaw 2026.2.14 does not know:** `anthropic/claude-sonnet-5-5` → "Agent failed before reply:
   Unknown model" — a CONFIG error is NOT failed over, the bot is dead until reverted (happened for ~2 min, 23 Oct).
