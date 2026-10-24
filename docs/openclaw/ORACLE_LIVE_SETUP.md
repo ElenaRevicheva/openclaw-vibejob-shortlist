@@ -126,6 +126,9 @@ with `[[tts:text]]…[[/tts:text]]` → Telegram voice note + full text. The `tt
   en-US-AvaMultilingualNeural` (speaks EN + ES), `outputFormat = ogg-24khz-16bit-mono-opus`; provider stays openai first,
   edge is the automatic fallback. Fired 24 Oct 15:24 with OpenAI at 429: 5.9 s voice note to Telegram via edge.
   When Microsoft changes again: `~/.openclaw/edge-tts-venv/bin/pip install -U edge-tts`.
+  **v2, 24 Oct 22:00:** one long Edge call failed/timed out on a 1,219-char reply (Elena heard nothing). ttsPromise now runs
+  AIPA_AITCF `scripts/speak-free.py` with the venv python: Edge in ~450-char sentence chunks (25 s each, one retry), Google
+  gTTS if Edge still fails, 150 s overall (venv has `edge-tts` + `gTTS`). Fired: 75 s voice note to Telegram, OpenAI at 429.
 
 ## Context injected into EVERY reply (bundled hook `bootstrap-extra-files`)
 `hooks.internal.entries.bootstrap-extra-files.paths = ["deals/TOOLS.md", "cards/TOOLS.md", "proof/TOOLS.md", "prod/TOOLS.md", "pack/TOOLS.md", "pack2/TOOLS.md", "pack3/TOOLS.md", "pack4/TOOLS.md"]` (23 Oct 2026); the other 3 bundled hooks are disabled.
