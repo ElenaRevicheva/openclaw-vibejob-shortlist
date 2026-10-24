@@ -48,7 +48,7 @@ md5 OK, 0 migrated files, gateway start 11:11:35 UTC unchanged).
   2026); OpenAI LAST until topped up. Prompt caching makes a Claude turn cheap (test: 10 uncached input tokens).
 - **Never put a model id OpenClaw 2026.2.14 does not know:** `anthropic/claude-sonnet-5-5` → "Agent failed before reply:
   Unknown model" — a CONFIG error is NOT failed over, the bot is dead until reverted (happened for ~2 min, 23 Oct).
-- **Voice = OpenAI tts-1 only** (Edge = 403 since 14 Oct): with OpenAI empty every voice reply fails. AGENTS.md VOICE rule
+- **Voice = OpenAI tts-1, then FREE Microsoft Edge (Ava Multilingual) since 24 Oct** (Edge was 403 14–24 Oct): with OpenAI empty every voice reply fails. AGENTS.md VOICE rule
   "TEXT FIRST": visible answer, then the `[[tts:text]]` block — Gemini had put the whole reply inside the block and she got
   "No response generated".
 - **23 Oct 2026 — failover PROVEN live, Groq removed, alerts added.** `openclaw agent --local` with a fake OPENAI key →
@@ -116,6 +116,16 @@ with `[[tts:text]]…[[/tts:text]]` → Telegram voice note + full text. The `tt
   hold it: `dist/pi-embedded-{8DITBEle,CM97XTkp}.js`, `dist/reply-{CYMZTXlH,CrwRmeCr}.js` (grep `LOCAL PATCH 24 Oct 2026`).
   Originals: `~/_session-backups/openclaw-tts-textfallback-20261024/`. Unit test on the installed function: voice-only +
   TTS failing → text; typed → text; TTS working → audio (unchanged).
+
+- **4) Free Microsoft voice works again — 24 Oct 2026 (Elena: "wire it and fire").** node-edge-tts (1.2.10 and the newest
+  1.2.11) sends Microsoft's old Sec-MS-GEC v1 token → 403 since 14 Oct. Python edge-tts 7.3.1 implements v2 and works.
+  `node_modules/node-edge-tts/dist/edge-tts.js` `ttsPromise` now runs `~/.openclaw/edge-tts-venv/bin/edge-tts` (pip
+  edge-tts==7.3.1) and converts to Ogg/Opus with ffmpeg when OpenClaw asks for .ogg (= Telegram voice bubble); the old
+  websocket method is kept as `_ttsPromiseWebsocket`. Copy of the patched file: `docs/openclaw/node-edge-tts.edge-tts.js.patched`;
+  original `~/_session-backups/openclaw-edge-tts-20261024/edge-tts.js.orig`. Config: `messages.tts.edge.voice =
+  en-US-AvaMultilingualNeural` (speaks EN + ES), `outputFormat = ogg-24khz-16bit-mono-opus`; provider stays openai first,
+  edge is the automatic fallback. Fired 24 Oct 15:24 with OpenAI at 429: 5.9 s voice note to Telegram via edge.
+  When Microsoft changes again: `~/.openclaw/edge-tts-venv/bin/pip install -U edge-tts`.
 
 ## Context injected into EVERY reply (bundled hook `bootstrap-extra-files`)
 `hooks.internal.entries.bootstrap-extra-files.paths = ["deals/TOOLS.md", "cards/TOOLS.md", "proof/TOOLS.md", "prod/TOOLS.md", "pack/TOOLS.md", "pack2/TOOLS.md", "pack3/TOOLS.md", "pack4/TOOLS.md"]` (23 Oct 2026); the other 3 bundled hooks are disabled.
