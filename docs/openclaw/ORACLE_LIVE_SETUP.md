@@ -109,6 +109,14 @@ with `[[tts:text]]…[[/tts:text]]` → Telegram voice note + full text. The `tt
    (16:12, 16:21 UTC), after = `[[audio_as_voice]] … .opus` (16:38:29), sent 16:38:31. Backups
    `~/_session-backups/openclaw-wa-20261015/dist-before-opus/`. Check: `grep -c 'channelId === "whatsapp") return TELEGRAM_OUTPUT' dist/*.js`.
 
+- **3) Voice-only reply never arrives empty — 24 Oct 2026 (Elena: "you pretended to fix that").** Opus answered her voice note
+  "tell me this with voice" ONLY inside `[[tts:text]]`; voice = OpenAI tts-1, out of credits → TTS failed → the text inside the
+  tag was dropped → "No response generated". A rule ("TEXT FIRST") was not enough. `maybeApplyTtsToPayload` now builds
+  `keepText` (the tag's text when nothing else is visible) and returns it on all 9 non-audio returns, in the 4 files that
+  hold it: `dist/pi-embedded-{8DITBEle,CM97XTkp}.js`, `dist/reply-{CYMZTXlH,CrwRmeCr}.js` (grep `LOCAL PATCH 24 Oct 2026`).
+  Originals: `~/_session-backups/openclaw-tts-textfallback-20261024/`. Unit test on the installed function: voice-only +
+  TTS failing → text; typed → text; TTS working → audio (unchanged).
+
 ## Context injected into EVERY reply (bundled hook `bootstrap-extra-files`)
 `hooks.internal.entries.bootstrap-extra-files.paths = ["deals/TOOLS.md", "cards/TOOLS.md", "proof/TOOLS.md", "prod/TOOLS.md", "pack/TOOLS.md", "pack2/TOOLS.md", "pack3/TOOLS.md", "pack4/TOOLS.md"]` (23 Oct 2026); the other 3 bundled hooks are disabled.
 - `deals/TOOLS.md` ← cron `*/30` `cd ~/cto-aipa && node scripts/hs-deal-prep.cjs --digest --out=… --proof-out=…/proof/TOOLS.md` (AIPA_AITCF repo). ≤11,000 chars.
