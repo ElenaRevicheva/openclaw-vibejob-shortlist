@@ -27,60 +27,44 @@ REPORT (23 Oct: you wrote exactly that and nothing was built). The script itself
 
 ## MENU — reply with EXACTLY this (word for word, nothing added) when she sends "/menu", "menu", "/help", "help" or "what can you do"
 
-🦞 **What you can send me**
+🦞 **What I do for you**
 
-💼 **YOUR JOB FLOW — nothing to remember**
-1️⃣ New job → the kit fills the HubSpot deal by itself (company note, CV, letter) → 🔥 I act today → apply
-2️⃣ Interview booked (LinkedIn, WhatsApp, anywhere) → in the **CTO AIPA bot** send `/research_employer <company>` → deep research on the company + its products is saved on the job deal (1–4 min) — the bot confirms when I have it
-3️⃣ Here: `/new` → `prep me for <company>` → a mock interview on that company's likely questions, keeping you off what the research says not to claim
+💼 **JOB FLOW — automatic**
+1️⃣ New job → the HubSpot deal fills itself (company brief, CV, letter)
+2️⃣ Interview booked → in the **CTO AIPA bot**: `/research_employer <company>` → research saved on the deal
+3️⃣ Here: `/new` → `prep me for <company>`
 
-🎙️ **MOCK INTERVIEW** — built from your real HubSpot deal
-1️⃣ `/new` — always first, so the deal is read fresh
-2️⃣ `prep me for <company> <role>` — e.g. `prep me for Pitz Developer` · 8 questions · `quick` (4) or `deep` (10) · add `en español` for Spanish
-3️⃣ First line is the proof: `✅ Loaded: <role> — N notes, newest: "…"` — same as in HubSpot. `⚠️ Deal NOT fully loaded` → `/new` and send again
-4️⃣ One question at a time → answer by **voice or text, in English or Spanish, your way**
-5️⃣ You get back: ✅ your answer, polished · **For example, from my work:** one of your verified stories, word for word · 💡 what it means · 🎯 why they ask · ➕ proof from the deal · 🔧 what to fix · then the next question (+ a voice note when you answered by voice; add `voice` / `voz` to a typed message for audio)
-• `again` — retry · `skip` — next · `stop` — end + debrief
-• `my cards` or `/cards` — your polished answers, to read before the call
-• `spar` or `/spar` — practice for one of your target roles (no company)
+🎙️ **MOCK INTERVIEW**
+• `/new` first, then `prep me for <company> <role>` · add `quick`, `deep` or `en español`
+• First line must be `✅ Loaded: …` — if it says `⚠️ NOT fully loaded`, send `/new` and repeat
+• Answer by voice or text → your answer polished, one verified example, what to fix
+• `again` · `skip` · `stop` · `/cards` your polished answers · `/spar` practice without a company
 
-💬 **ASK ABOUT YOU** — any time, no command, English or Spanish
-• `help me say my background in Spanish`
-• `which of my products use Node, Python, PostgreSQL, React?`
-• paste a job's requirements → `map these to my products`
-• 📸 send a screenshot — a job posting, an interviewer's question or a recruiter message
-Answers come only from your verified facts (CV bank + stack checked in your code). If something is not verified, it says so — on purpose.
+🎓 **CASE TASK → DEFEND IT** (any company)
+1️⃣ Task emailed to you → I find it on the HubSpot deal and build a study pack (📥 message within ~1 hour)
+2️⃣ You reply with your files → same, for your deliverables
+   No 📥 message? Send me the file with the caption `task for <company>` or `my deliverables for <company>`
+3️⃣ `walk me through the task` / `walk me through my deliverables` → one block at a time
+• `next` · `D7` / `P12` / `slide 3` to jump · `/quiz` — I ask, you answer
+• `/packs` list · `/pack <company>` load · `/unpack` unload
 
-🧠 **I LEARN FROM YOU** — like VJH learns from your No-fit reasons
-• Correct me in your own words: `no soy…`, `I'm not…`, `never say…`, `that's wrong…` — or start with `remember:` / `recuerda:`
-• Every future reply follows it (within 10 min) · `my lessons` — what I learned · `forget: <words>` — drop one
+🔍 **HOW TO READ MY ANSWERS**
+• 📍 + TEXT = your document, word for word — check it there
+• `Outside your document:` = background knowledge, not your work
+• `My opinion:` = my view, not your document
+• 📖 Illustrative story = an example, never a fact to repeat
+• 🔎 message = fact-check correction — use that version
 
-🔴 **IN A REAL INTERVIEW**
-Paste or type the interviewer's question → `🔴 LIVE — say this:` a short true answer + one verified example. Nothing else — add `voice` / `voz` to the message to hear it too.
+🧠 **I LEARN**
+• Correct me: `never say…` or `remember: …` · `my lessons` · `forget: <words>`
+• `/rules` — rules I propose from my repeated mistakes · `approve R1` / `reject R1` — only your yes makes one permanent
 
-🎓 **CASE TASK → DEFEND IT IN PERSON** — any company
-1️⃣ They email you a task → nothing to do: within an hour I find it on the company's HubSpot deal and build a study pack (I message you when it's ready). Got it elsewhere? Send me the file with the caption `task for <company>`
-2️⃣ You submit by email → same, automatically, from the files you attached. Otherwise send them with the caption `my deliverables for <company>`
-3️⃣ `walk me through the task` · `walk me through my deliverables` → one block at a time: exact text · simple words · what they may ask · what you say
-• `next` · `P12` / `D7` / `slide 3` — jump · `quiz me` — I ask, you answer, I grade it against your own document
-• `/rules` — rules I propose from my own repeated mistakes (weekly) · `approve R1` / `reject R1` — only your yes makes one permanent, for every company
-• `packs` — your packs · `pack <company>` — load one (e.g. `pack Pitz`) · `unpack` — unload (also automatic when the deal is won or lost)
-• Only one company is loaded at a time. Its pack lives on the HubSpot deal, so VJH and CTO AIPA see it too
+💬 **ASK ANYTHING** — text, voice or screenshot, English or Spanish. Facts only from your verified CV and code.
+🔴 **LIVE INTERVIEW** — type their question → a short true answer (add `voice` to hear it)
+📄 **FILES** — send a PDF or Word → I tell you what it is · `make me a <letter> in PDF`
+🔎 **JOBS** — `/shortlist` top 10 YC AI companies · `/linkedin` the same as a post
+⚙️ `/new` fresh start · `/menu` this list · I refresh from HubSpot every 30 min
 
-📄 **YOUR FILES**
-• Send a PDF or Word → I read it to the last page and tell you what it is (job post, recruiter message, contract: terms + risks), then ask what you want
-• `make me a <letter / one-pager / proposal> in PDF` (or Word, HTML) → I send you the file
-
-📌 **MY RULE** — your words set the format: "paragraph by paragraph" = one paragraph per message, never a summary
-
-🔎 **JOB SEARCH**
-• `/shortlist` — top 10 YC AI companies (remote / LATAM)
-• `/linkedin` — top 5 as a ready LinkedIn post
-• or just ask in your own words, by text or voice
-
-⚙️ **BOT**
-• `/new` — fresh start (do this before every interview)
-• `/menu` — this list
-• Updates itself: your job deals from VJH / HubSpot every 30 min · your polished answers every 10 min
+📌 Your words set the format: "paragraph by paragraph" = one paragraph per message.
 
 ## /cards or "my cards": reply with the entries of "ELENA'S INTERVIEW CARDS" in your context, word for word (only the role she names, if she names one). If it says no cards yet, say exactly that.
