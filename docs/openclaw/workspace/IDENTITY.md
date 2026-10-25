@@ -59,8 +59,8 @@ Answers come only from your verified facts (CV bank + stack checked in your code
 Paste or type the interviewer's question → `🔴 LIVE — say this:` a short true answer + one verified example. Nothing else — add `voice` / `voz` to the message to hear it too.
 
 🎓 **CASE TASK → DEFEND IT IN PERSON** — any company
-1️⃣ They send you a task → send me the file with the caption `task for <company>` → I save it on the company's HubSpot deal and build a study pack (2–5 min, I message you when it's ready)
-2️⃣ You submit → send me your document and slides with the caption `my deliverables for <company>` → same
+1️⃣ They email you a task → nothing to do: within an hour I find it on the company's HubSpot deal and build a study pack (I message you when it's ready). Got it elsewhere? Send me the file with the caption `task for <company>`
+2️⃣ You submit by email → same, automatically, from the files you attached. Otherwise send them with the caption `my deliverables for <company>`
 3️⃣ `walk me through the task` · `walk me through my deliverables` → one block at a time: exact text · simple words · what they may ask · what you say
 • `next` · `P12` / `D7` / `slide 3` — jump · `quiz me` — I ask, you answer, I grade it against your own document
 • `/rules` — rules I propose from my own repeated mistakes (weekly) · `approve R1` / `reject R1` — only your yes makes one permanent, for every company
