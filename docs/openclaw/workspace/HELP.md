@@ -40,6 +40,7 @@ Paste or type the interviewer's question → `🔴 LIVE — say this:` a short t
 2️⃣ You submit → send me your document and slides with the caption `my deliverables for <company>` → same
 3️⃣ `walk me through the task` · `walk me through my deliverables` → one block at a time: exact text · simple words · what they may ask · what you say
 • `next` · `P12` / `D7` / `slide 3` — jump · `quiz me` — I ask, you answer, I grade it against your own document
+• `/rules` — rules I propose from my own repeated mistakes (weekly) · `approve R1` / `reject R1` — only your yes makes one permanent, for every company
 • `packs` — your packs · `pack <company>` — load one (e.g. `pack Pitz`) · `unpack` — unload (also automatic when the deal is won or lost)
 • Only one company is loaded at a time. Its pack lives on the HubSpot deal, so VJH and CTO AIPA see it too
 
